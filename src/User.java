@@ -42,4 +42,98 @@ public class User {
         email = mail;
         phoneNumber = pNumber;
     }
+    
+    /**
+     * 
+     */
+    private void addUserToContactList() {}
+    
+    /**
+     * 
+     */
+    private void updateReviewsOfOthers() {}
+    
+    /**
+     * 
+     */
+    private void requestActivation() {}
+    
+    /**
+     * 
+     */
+    private void authenticate() {}
+    
+    /**
+     * 
+     */
+    private void removeProfile() {}
+    
+    /**
+     * @return 
+     * 
+     */
+    private String getFirstName() {
+        return firstName;
+    }
+    
+    /**
+     * @return 
+     * 
+     */
+    private String getLastName() {
+        return lastName;
+    }
+    
+    /**
+     * @return 
+     * 
+     */
+    private String getEmail() {
+        return email;
+    }
+    
+    /**
+     * 
+     */
+    private int getPhoneNumber() {
+        return phoneNumber;
+    }
+    
+    /**
+     * 
+     */
+    private void getContractList() {}
+    
+    /**
+     * 
+     */
+    private void getReviewsOfOthers() {}
+    
+    /**
+     * 
+     */
+    private void setFirstName(String newFirst) {
+        firstName = newFirst;
+        
+    }
+    
+    /**
+     * 
+     */
+    private void setLastName(String newLast) {
+        lastName = newLast;
+    }
+    
+    /**
+     * 
+     */
+    private void setEmail(String newEmail) {
+        email = newEmail;
+    }
+    
+    /**
+     * 
+     */
+    private void setPhoneNumber() {}
+
 }
