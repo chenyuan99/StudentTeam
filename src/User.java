@@ -134,6 +134,8 @@ public class User {
     /**
      * 
      */
-    private void setPhoneNumber() {}
+    private void setPhoneNumber(int number) {
+        phoneNumber = number;
+    }
 
 }
