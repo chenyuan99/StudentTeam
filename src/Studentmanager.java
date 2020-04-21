@@ -38,6 +38,7 @@ public class Studentmanager {
      */
     public static void beginParsingByLine(String filename, String[] args) {
         try {
+            User guestUser = new User();
             Scanner sc = new Scanner(new File(filename));
             Scanner scancmd;
             // Declare two scanners one to read the file and one
@@ -64,7 +65,11 @@ public class Studentmanager {
                 // on each line
                 String type;
                 switch (cmd) {
-                  
+                    case "register": 
+                        guestUser.selectCreateNewProfile();
+                        guestUser.submitCreateNewProfile();
+                        break;
+                        
                     default:
                         System.out.println("Unrecognized input");
                         break;

@@ -11,13 +11,13 @@ import java.util.Scanner;
  *
  */
 public class User {
-    
+
     private int userID;
     private String firstName;
     private String lastName;
     private String email;
     private int phoneNumber;
-    
+
     public User() {
         userID = -1;
         firstName = "";
@@ -25,7 +25,8 @@ public class User {
         email = "";
         phoneNumber = -1;
     }
-    
+
+
     /**
      * 
      * @param uID
@@ -42,95 +43,117 @@ public class User {
         email = mail;
         phoneNumber = pNumber;
     }
-    
+
+
     /**
      * 
      */
-    private void addUserToContactList() {}
-    
+    private void addUserToContactList() {
+    }
+
+
     /**
      * 
      */
-    private void updateReviewsOfOthers() {}
-    
+    private void updateReviewsOfOthers() {
+    }
+
+
     /**
      * 
      */
-    private void requestActivation() {}
-    
+    private void requestActivation() {
+    }
+
+
     /**
      * 
      */
-    private void authenticate() {}
-    
+    private void authenticate() {
+    }
+
+
     /**
      * 
      */
-    private void removeProfile() {}
-    
+    private void removeProfile() {
+    }
+
+
     /**
-     * @return 
+     * @return
      * 
      */
-    private String getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
-    
+
+
     /**
-     * @return 
+     * @return
      * 
      */
     private String getLastName() {
         return lastName;
     }
-    
+
+
     /**
-     * @return 
+     * @return
      * 
      */
     private String getEmail() {
         return email;
     }
-    
+
+
     /**
      * 
      */
     private int getPhoneNumber() {
         return phoneNumber;
     }
-    
+
+
     /**
      * 
      */
-    private void getContractList() {}
-    
+    private void getContractList() {
+    }
+
+
     /**
      * 
      */
-    private void getReviewsOfOthers() {}
-    
+    private void getReviewsOfOthers() {
+    }
+
+
     /**
      * 
      */
     private void setFirstName(String newFirst) {
         firstName = newFirst;
-        
+
     }
-    
+
+
     /**
      * 
      */
     private void setLastName(String newLast) {
         lastName = newLast;
     }
-    
+
+
     /**
      * 
      */
     private void setEmail(String newEmail) {
         email = newEmail;
     }
-    
+
+
     /**
      * 
      */
@@ -138,4 +161,55 @@ public class User {
         phoneNumber = number;
     }
 
+    // Functions for guest users
+
+
+    /**
+     * 
+     */
+    public void selectCreateNewProfile() {
+        System.out.print("profile creation form\n");
+    }
+
+
+    /**
+     * 
+     */
+    public void submitCreateNewProfile() {
+        System.out.print("an email was sent\n");
+    }
+
+
+    /**
+     * 
+     */
+    public void blankField() {
+        System.out.print("field left blank warning");
+    }
+
+    // Functions for student user
+
+
+    /**
+     * 
+     */
+    public void authenticateStudentProfile() {
+        System.out.print("an email was sent\n");
+    }
+
+
+    /**
+     * 
+     */
+    public void requestAnotherActivationEmail() {
+        System.out.print("an email was sent\n");
+    }
+
+
+    /**
+     * 
+     */
+    public void clickActivationLink() {
+        System.out.print("site-wide student features are enabled");
+    }
 }
