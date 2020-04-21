@@ -97,6 +97,14 @@ public class User {
         return lastName;
     }
 
+    /**
+     * added method
+     * @return name fullName
+     */
+    public String getName() {
+        return firstName + " " + lastName;
+    }
+
 
     /**
      * @return
@@ -212,6 +220,5 @@ public class User {
     public void clickActivationLink() {
         System.out.print("site-wide student features are enabled");
     }
-   
 
 }

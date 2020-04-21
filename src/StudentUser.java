@@ -1,7 +1,12 @@
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author Yuan Chen
+ * @version 2020-04-21
+ */
 public class StudentUser extends User {
-    
+
     private String major;
     private String year;
     private ArrayList<Group> currentGroup;
@@ -9,8 +14,13 @@ public class StudentUser extends User {
     private ArrayList<Skill> skills;
 
     public StudentUser() {
-        // TODO Auto-generated constructor stub
+        major = "";
+        year = "";
+        currentGroup = new ArrayList<Group>();
+        pastGroup = new ArrayList<Group>();
+        skills = new ArrayList<Skill>();
     }
+
 
     /**
      * 
@@ -29,15 +39,83 @@ public class StudentUser extends User {
         super(uID, fName, lName, mail, pNumber);
         // TODO Auto-generated constructor stub
     }
-    
-    public void modifyProfile() {}
-    public void submitSkills() {}
-    public void modifySkills() {}
-    public void createGroup() {}
-    public void getMajor() {}
-    public void getYear() {}
-    public void getCurrentGroup() {}
-    public void getPastGroup() {}
-    public void getSkills() {}
+
+
+    /**
+     * 
+     */
+    public void modifyProfile() {
+    }
+
+
+    /**
+     * 
+     */
+    public void submitSkills() {
+        System.out.print("Skills are successfully submitted");
+    }
+
+
+    /**
+     * 
+     */
+    public void modifySkills() {
+        System.out.print("Skills are successfully modified");
+    }
+
+
+    /**
+     * 
+     */
+    public void createGroup() {
+        Group group = new Group();
+        currentGroup.add(group);
+        System.out.print("New Group " + group.getName() + " is successfully created");
+    }
+
+
+    /**
+     * 
+     * @return major of the student user
+     */
+    public String getMajor() {
+        return major;
+    }
+
+
+    /**
+     * 
+     * @return year of the student user
+     */
+    public String getYear() {
+        return year;
+    }
+
+
+    /**
+     * 
+     * @return
+     */
+    public ArrayList<Group> getCurrentGroup() {
+        return currentGroup;
+    }
+
+
+    /**
+     * 
+     * @return
+     */
+    public ArrayList<Group> getPastGroup() {
+        return pastGroup;
+    }
+
+
+    /**
+     * 
+     * @return
+     */
+    public ArrayList<Skill> getSkills() {
+        return skills;
+    }
 
 }

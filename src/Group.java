@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * 
  */
@@ -9,18 +11,20 @@
 public class Group {
     private String name;
     private int groupID;
-    private User manager;// tbd
-    private User member;// tbd
+    private GroupManager manager;// tbd
+    private ArrayList<GroupMember> members;// tbd
+
     /**
      * 
      */
     public Group() {
-        name ="";
+        name = "";
         groupID = -1;
-        manager = new User();
-        member = new User();
+        manager = new GroupManager();
+        members = new ArrayList<GroupMember>();
     }
-    
+
+
     /**
      * 
      * @param n
@@ -28,10 +32,47 @@ public class Group {
      * @param m
      * @param mem
      */
-    public Group(String n, int id, User m, User mem) {
+    public Group(String n, int id, GroupManager m, ArrayList<GroupMember> mem) {
         name = n;
         groupID = id;
         manager = m;
-        member = m;
+        members = mem;
+    }
+
+
+    /**
+     * 
+     * @return
+     */
+    public String getName() {
+        return name;
+    }
+
+
+    /**
+     * 
+     * @return
+     */
+    public GroupManager getManager() {
+        return manager;
+    }
+
+
+    /**
+     * 
+     * @return
+     */
+    public ArrayList<GroupMember> getMembers() {
+        return members;
+    }
+
+    /**
+     * 
+     * @param user student user to be added to the group
+     */
+    public void addMember(StudentUser user) {
+        GroupMember newMember = new GroupMember();
+        // copy paste all the information from user to newMember
+        members.add(newMember);
     }
 }

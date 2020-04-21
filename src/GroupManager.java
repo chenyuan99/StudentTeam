@@ -6,14 +6,14 @@
  * @author cheny
  *
  */
-public class GroupMember extends StudentUser {
+public class GroupManager extends GroupMember {
 
     private Group group;
 
     /**
      * 
      */
-    public GroupMember() {
+    public GroupManager() {
         // TODO Auto-generated constructor stub
     }
 
@@ -25,7 +25,7 @@ public class GroupMember extends StudentUser {
      * @param mail
      * @param pNumber
      */
-    public GroupMember(
+    public GroupManager(
         int uID,
         String fName,
         String lName,
@@ -38,10 +38,20 @@ public class GroupMember extends StudentUser {
 
     /**
      * 
-     * @return
+     * @param newMem
      */
-    public Group getGroup() {
-        return group;
+    public void addNewMember(GroupMember newMem) {
+        // group.add(newMem)
+    }
+
+
+    /**
+     * 
+     * @param newMem
+     */
+    public void removeMember(GroupMember newMem) {
+        // group.add(newMem)
+        System.out.print(newMem.getName() + "  added to " + group.getName());
     }
 
 }
