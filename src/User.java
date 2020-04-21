@@ -93,7 +93,7 @@ public class User {
      * @return
      * 
      */
-    private String getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
@@ -102,7 +102,7 @@ public class User {
      * @return
      * 
      */
-    private String getEmail() {
+    public String getEmail() {
         return email;
     }
 
@@ -110,7 +110,7 @@ public class User {
     /**
      * 
      */
-    private int getPhoneNumber() {
+    public int getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -118,21 +118,21 @@ public class User {
     /**
      * 
      */
-    private void getContractList() {
+    public void getContractList() {
     }
 
 
     /**
      * 
      */
-    private void getReviewsOfOthers() {
+    public void getReviewsOfOthers() {
     }
 
 
     /**
      * 
      */
-    private void setFirstName(String newFirst) {
+    public void setFirstName(String newFirst) {
         firstName = newFirst;
 
     }
@@ -141,7 +141,7 @@ public class User {
     /**
      * 
      */
-    private void setLastName(String newLast) {
+    public void setLastName(String newLast) {
         lastName = newLast;
     }
 
@@ -149,7 +149,7 @@ public class User {
     /**
      * 
      */
-    private void setEmail(String newEmail) {
+    public void setEmail(String newEmail) {
         email = newEmail;
     }
 
@@ -157,7 +157,7 @@ public class User {
     /**
      * 
      */
-    private void setPhoneNumber(int number) {
+    public void setPhoneNumber(int number) {
         phoneNumber = number;
     }
 
@@ -212,4 +212,6 @@ public class User {
     public void clickActivationLink() {
         System.out.print("site-wide student features are enabled");
     }
+   
+
 }
