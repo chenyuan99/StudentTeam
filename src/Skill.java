@@ -63,37 +63,74 @@ public class Skill {
      * 
      * @param d
      */
-    private void removeDocument(Document d) {
+    public void removeDocument(Document d) {
         documents.remove(d);
-        System.out.print("Description " + d + "is removed\n");
+        System.out.print("Description " + "is removed\n");
     }
 
 
-    public void updateReviews() {
+    /**
+     * 
+     * @param newReviews
+     */
+    public void updateReviews(ArrayList<Review> newReviews) {
+        reviews = newReviews;
+        System.out.print("Reviews " + "are updated\n");
     }
 
 
-    public void ugetName() {
+    /**
+     * 
+     * @return name of the skill
+     */
+    public String getName() {
+
+        return name;
+
     }
 
 
-    public void ugetDescription() {
+    /**
+     * 
+     * @return description
+     */
+    public String getDescription() {
+        return description;
     }
 
 
-    public void ugetDocuments() {
+    /**
+     * 
+     */
+    public ArrayList<Document> getDocuments() {
+        return documents;
     }
 
 
-    public void ugetReviews() {
+    /**
+     * 
+     * @return
+     */
+    public ArrayList<Review> getReviews() {
+        return reviews;
     }
 
 
-    public void usetName(String n) {
+    /**
+     * 
+     * @param n
+     */
+    public void setName(String n) {
         name = n;
+        System.out.print("name is changed to " + name + "\n");
     }
 
 
-    public void usetDescription() {
+    /**
+     * 
+     * @param d
+     */
+    public void setDescription(String d) {
+        description = d;
     }
 }
