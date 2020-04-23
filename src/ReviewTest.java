@@ -74,7 +74,7 @@ class ReviewTest {
 	 */
 	@Test
 	void testGetReviewer() {
-		assertEquals(testReview.getReviewer().getName(), " ");
+		assertEquals(testReview.getReviewer().getFirstName(), "");
 	}
 
 	/**
