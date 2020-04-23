@@ -146,13 +146,8 @@ public class MainDriver {
 			System.out.print("Enter a new major: ");
 			StudentUser currentUserCast = (StudentUser) currentUser;
 			currentUserCast.setMajor(scan.next());
-			// TODO: there are currently no setter methods for major
-			// done
-			// System.out.println("<FEATURE NOT YET IMPLEMENTED>");
 			break;
 		case NavigationMenu.EDIT_YEAR:
-			// TODO: there are currently no setter methods for year
-			// System.out.println("<FEATURE NOT YET IMPLEMENTED>");
 			System.out.print("Enter a new year: ");
 			StudentUser currentUserCast1 = (StudentUser) currentUser;
 			currentUserCast1.setMajor(scan.next());
