@@ -6,7 +6,7 @@ import junit.framework.TestCase;
  * @version 04-21-2020
  *
  */
-public class StudentmanagerTest extends TestCase {
+public class StudentteamTest extends TestCase {
 
     /**
      * test method
@@ -15,7 +15,7 @@ public class StudentmanagerTest extends TestCase {
      */
     @SuppressWarnings("static-access")
     public void test() throws Exception {
-        Studentmanager manager = new Studentmanager();
+        Studentteam manager = new Studentteam();
         String[] args = new String[4];
         args[0] = "SampleInput.txt";
         manager.main(args);
