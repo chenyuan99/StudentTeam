@@ -118,6 +118,7 @@ public class MainDriver {
 			System.out.println("A user with that email doesn't exist.");
 		} else {
 			currentUser = user_DB.get(index);
+			System.out.println("Welcome!");
 		}
 	}
 
@@ -136,7 +137,7 @@ public class MainDriver {
 			break;
 		case NavigationMenu.EDIT_EMAIL:
 			System.out.print("Enter a new email: ");
-			currentUser.setEmail(scan.next());
+			currentUser.setEmail(scan.nextLine());
 			break;
 		case NavigationMenu.EDIT_PHONE_NUMBER:
 			System.out.print("Enter a new phone number: ");
@@ -145,7 +146,7 @@ public class MainDriver {
 		case NavigationMenu.EDIT_MAJOR:
 			System.out.print("Enter a new major: ");
 			StudentUser currentUserCast = (StudentUser) currentUser;
-			currentUserCast.setMajor(scan.next());
+			currentUserCast.setMajor(scan.nextLine());
 			break;
 		case NavigationMenu.EDIT_YEAR:
 			System.out.print("Enter a new year: ");
@@ -159,6 +160,7 @@ public class MainDriver {
 
 	private static void signOut(Scanner scan) {
 		currentUser = null;
+		System.out.print("You are successfully signed out.");
 	}
 
 } // end of MainDriver class
