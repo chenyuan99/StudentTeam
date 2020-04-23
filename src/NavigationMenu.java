@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -7,15 +6,17 @@ import java.util.Scanner;
  */
 public class NavigationMenu {
 	
-	/* Return options for displayMainMenu() */
+	/* Universal return options */
 	public static final int QUIT = 0;
+	public static final int CANCEL = -1;
+	
+	/* Return options for displayMainMenu() */
 	public static final int CREATE_NEW_PROFILE = 1;
 	public static final int SIGN_IN = 2;
 	public static final int EDIT_PROFILE = 3;
 	public static final int SIGN_OUT = 4;
 	
 	/* Return options for displayEditProfile()*/
-	public static final int CANCEL = 0;
 	public static final int EDIT_FIRST_NAME = 1;
 	public static final int EDIT_LAST_NAME = 2;
 	public static final int EDIT_EMAIL = 3;
