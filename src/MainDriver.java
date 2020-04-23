@@ -10,32 +10,122 @@ import java.util.Scanner;
  */
 public class MainDriver {
 
-    static boolean logIn = false;
-    static int currentUser = -1;
-    public static void main(String[] args) {
-
-        ArrayList<StudentUser> usersDB = new ArrayList<StudentUser>();
-
-        Scanner scan = new Scanner(System.in);
-        prompt(); // display prompt
-        while (scan.hasNext()) {
-            int res = scan.nextInt();
-            decision(res, usersDB); // decision parser
-            System.out.println("");
-            prompt(); // display prompt
+	private static ArrayList<StudentUser> user_DB;
+	private static ArrayList<Integer> userID_DB;
+	private static int userIDCounter;
+	
+    private static User currentUser;
+    
+    public static void main(String[] args) 
+    {	
+    	user_DB = new ArrayList<StudentUser>();
+    	userID_DB = new ArrayList<Integer>();
+    	userIDCounter = 0;
+    	
+    	currentUser = null;
+        
+    	System.out.println("==================== STUDENT TEAM MANAGER ====================");
+    	
+    	Scanner scan = new Scanner(System.in);
+        int userInput = -1;
+        while (userInput != NavigationMenu.QUIT) {
+        	userInput = NavigationMenu.displayMainMenu(scan, currentUser);
+        	switch (userInput) {
+        		case NavigationMenu.CREATE_NEW_PROFILE:
+        			createNewProfile(scan);
+        			break;
+        		case NavigationMenu.SIGN_IN:
+        			signIn(scan);
+        			break;
+        		case NavigationMenu.EDIT_PROFILE: 
+        			editProfile(scan);
+        			break;
+        		case NavigationMenu.SIGN_OUT: 
+        			signOut(scan);
+        			break;
+        		default: break;
+        	}
         }
+        
+        System.out.println("\nGoodbye!");
+        System.out.println("==============================================================");
 
     }
-
-
-    public static void prompt() {
-        System.out.println("Enter the nubmer to make decision: ");
-        System.out.println("1. Add customer profile");
-        System.out.println("2. Log into customer profile");
-        System.out.println("3. Modify customer profile");
-        System.out.println("4. Log out of customer profile");
-        System.out.println("5. Remove customer profile");
+    
+    private static void createNewProfile(Scanner scan) 
+    {	
+    	int userID = userIDCounter + 1;
+    	
+        System.out.print("Enter your first name: ");
+        String fName = scan.next();
+        
+        System.out.print("Enter your last name: ");
+        String lName = scan.next();
+        
+        System.out.print("Enter your email: ");
+        String email = scan.next();
+        
+        System.out.print("Enter your phone number: ");
+        String phone = scan.next();
+        
+        System.out.print("Enter your major: ");
+        String major = scan.next();
+        
+        System.out.println("Select your year: ");
+        System.out.println("1. Freshman\n2. Sophomore\n3. Junior\n4. Senior");
+        int selectedYear = scan.nextInt();
+        while (selectedYear < 1 || selectedYear > 4) {
+        	System.out.printf("'%d' is an invalid selection.\2n", selectedYear);
+        	System.out.println("Select your year: ");
+            System.out.println("1. Freshman\n2. Sophomore\n3. Junior\n4. Senior");
+            selectedYear = scan.nextInt();
+        }
+        String year = "";
+        switch (selectedYear) {
+        	case 1: year = "Freshman";
+        		break;
+        	case 2: year = "Sophomore";
+        		break;
+        	case 3: year = "Junior";
+        		break;
+        	case 4: year = "Senior";
+        		break;
+        	default: break;
+        }
+        
+        userID_DB.add(userID);
+        user_DB.add(new StudentUser(userID, fName, lName, email, 0, major, year));
+        
+        System.out.println("Your account has been successfully created!");
+        System.out.printf("Your user ID is %d.\n\n", userID);
+        
+        userIDCounter++;
     }
+    
+    private static void signIn(Scanner scan) {
+    	System.out.print("\nEnter your ID: ");
+    	int id = scan.nextInt();
+    	int index = userID_DB.indexOf(id);
+    	if (index == -1) {
+    		System.out.println("A user with that ID doesn't exist.");
+    	}
+    	else {
+    		currentUser = user_DB.get(index);
+    	}
+    }
+    
+    private static void editProfile(Scanner scan) {
+    	System.out.println("\nSelected: Edit Profile\n");
+    }
+    
+    private static void signOut(Scanner scan) {
+    	System.out.println("\nSelected: Sign Out\n");
+    	currentUser = null;
+    }
+    
+    
+    /*                ^^^ modified things above this line ^^^                */
+    /* --------------------------------------------------------------------- */
 
 
     /**

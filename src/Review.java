@@ -6,76 +6,96 @@
  */
 public class Review {
 
-    private int score;
-    private StudentUser reviewer;
-    private String description;
-    private int upvotes;
-    private int downvotes;
+	private int score;
+	private StudentUser reviewer;
+	private String description;
+	private int upvotes;
+	private int downvotes;
 
-    public Review() {
-        score = 0;
-        reviewer = new StudentUser();
-        description = "";
-        upvotes = 0;
-        downvotes = 0;
-    }
+	public Review() {
+		score = 0;
+		reviewer = new StudentUser();
+		description = "";
+		upvotes = 0;
+		downvotes = 0;
+	}
 
+	/**
+	 * 
+	 * @param s
+	 * @param r
+	 * @param d
+	 * @param u
+	 * @param dv
+	 */
+	public Review(int s, StudentUser r, String d, int u, int dv) {
+		score = s;
+		reviewer = r;
+		description = d;
+		upvotes = u;
+		downvotes = dv;
+	}
 
-    /**
-     * 
-     * @param s
-     * @param r
-     * @param d
-     * @param u
-     * @param dv
-     */
-    public Review(int s, StudentUser r, String d, int u, int dv) {
-        score = s;
-        reviewer = r;
-        description = d;
-        upvotes = u;
-        downvotes = dv;
-    }
+	/**
+	 * 
+	 */
+	public void upVotes() {
+		upvotes++;
+		score();
+	}
 
+	/**
+	 * 
+	 */
+	private void score() {
+		score = upvotes - downvotes;
+	}
 
-    public void upVotes() {
-        upvotes++;
-        score();
-    }
+	/**
+	 * 
+	 */
+	public void downVotes() {
+		downvotes++;
+		score();
+	}
 
+	/**
+	 * 
+	 * @return score of the review
+	 */
+	public int getScore() {
+		return score;
+	}
 
-    private void score() {
-        score = upvotes - downvotes;
-    }
+	/**
+	 * 
+	 * @return
+	 */
+	public StudentUser getReviewer() {
+		return reviewer;
+	}
 
+	/**
+	 * 
+	 * @return description of the review
+	 */
+	public String getDesciption() {
+		return description;
+	}
 
-    public void downVotes() {
-        downvotes++;
-        score();
-    }
+	/**
+	 * 
+	 * @return upvotes number of upvotes
+	 */
+	public int getUpvotes() {
+		return upvotes;
+	}
 
-
-    public int getScore() {
-        return score;
-    }
-
-
-    public StudentUser getReviewer() {
-        return reviewer;
-    }
-
-
-    public String getDesciption() {
-        return description;
-    }
-
-
-    public int getUpvotes() {
-        return upvotes;
-    }
-
-
-    public int getDownvotes() {
-        return downvotes;
-    }
+	/**
+	 * 
+	 * @return downvotes number of down votes
+	 */
+	public int getDownvotes() {
+		return downvotes;
+	}
 }
