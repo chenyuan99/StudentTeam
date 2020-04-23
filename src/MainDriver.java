@@ -31,23 +31,23 @@ public class MainDriver {
 			userInput = NavigationMenu.displayMainMenu(scan, currentUser);
 			scan.nextLine();
 			switch (userInput) {
-			case NavigationMenu.CREATE_NEW_PROFILE:
-				createNewProfile(scan);
-				break;
-			case NavigationMenu.SIGN_IN:
-				signIn(scan);
-				break;
-			case NavigationMenu.VIEW_PROFILE:
-				viewProfile();
-				break;
-			case NavigationMenu.EDIT_PROFILE:
-				editProfile(scan);
-				break;
-			case NavigationMenu.SIGN_OUT:
-				signOut(scan);
-				break;
-			default:
-				break;
+				case NavigationMenu.CREATE_NEW_PROFILE:
+					createNewProfile(scan);
+					break;
+				case NavigationMenu.SIGN_IN:
+					signIn(scan);
+					break;
+				case NavigationMenu.VIEW_PROFILE:
+					viewProfile();
+					break;
+				case NavigationMenu.EDIT_PROFILE:
+					editProfile(scan);
+					break;
+				case NavigationMenu.SIGN_OUT:
+					signOut(scan);
+					break;
+				default:
+					break;
 			}
 		}
 
@@ -93,20 +93,20 @@ public class MainDriver {
 		}
 		String year = "";
 		switch (selectedYear) {
-		case 1:
-			year = "Freshman";
-			break;
-		case 2:
-			year = "Sophomore";
-			break;
-		case 3:
-			year = "Junior";
-			break;
-		case 4:
-			year = "Senior";
-			break;
-		default:
-			break;
+			case 1:
+				year = "Freshman";
+				break;
+			case 2:
+				year = "Sophomore";
+				break;
+			case 3:
+				year = "Junior";
+				break;
+			case 4:
+				year = "Senior";
+				break;
+			default:
+				break;
 		}
 
 		// TODO: update to store password as well!
@@ -155,68 +155,69 @@ public class MainDriver {
 		int userSelection = NavigationMenu.displayEditProfile(scan, currentUser);
 		scan.nextLine();
 		switch (userSelection) {
-		case NavigationMenu.CANCEL: return;
-		case NavigationMenu.EDIT_EMAIL:
-			System.out.print("Enter a new email: ");
-			currentUser.setEmail(scan.nextLine());
-			break;
-		case NavigationMenu.EDIT_PASSWORD:
-			//
-			// TODO: add stuff here Mr. Saunders!
-			//
-			System.out.println("<NOT YET IMPLEMENTED>");
-			break;
-		case NavigationMenu.EDIT_FIRST_NAME:
-			System.out.print("Enter a new first name: ");
-			currentUser.setFirstName(scan.nextLine());
-			break;
-		case NavigationMenu.EDIT_LAST_NAME:
-			System.out.print("Enter a new last name: ");
-			currentUser.setLastName(scan.nextLine());
-			break;
-		case NavigationMenu.EDIT_PHONE_NUMBER:
-			System.out.print("Enter a new phone number: ");
-			currentUser.setPhoneNumber(scan.nextLine());
-			break;
-		case NavigationMenu.EDIT_MAJOR:
-			System.out.print("Enter a new major: ");
-			StudentUser currentUserCast = (StudentUser) currentUser;
-			currentUserCast.setMajor(scan.nextLine());
-			break;
-		case NavigationMenu.EDIT_YEAR:
-			StudentUser currentUserCast1 = (StudentUser) currentUser;
-			System.out.println("Enter a new year: ");
-			System.out.println("1. Freshman\n2. Sophomore\n3. Junior\n4. Senior");
-			int selectedYear = scan.nextInt();
-			scan.nextLine();
-			while (selectedYear < 1 || selectedYear > 4) {
-				System.out.printf("'%d' is an invalid selection.\2n", selectedYear);
-				System.out.println("Select your year: ");
+			case NavigationMenu.CANCEL: 
+				return;
+			case NavigationMenu.EDIT_EMAIL:
+				System.out.print("Enter a new email: ");
+				currentUser.setEmail(scan.nextLine());
+				break;
+			case NavigationMenu.EDIT_PASSWORD:
+				//
+				// TODO: add stuff here Mr. Saunders!
+				//
+				System.out.println("<NOT YET IMPLEMENTED>");
+				break;
+			case NavigationMenu.EDIT_FIRST_NAME:
+				System.out.print("Enter a new first name: ");
+				currentUser.setFirstName(scan.nextLine());
+				break;
+			case NavigationMenu.EDIT_LAST_NAME:
+				System.out.print("Enter a new last name: ");
+				currentUser.setLastName(scan.nextLine());
+				break;
+			case NavigationMenu.EDIT_PHONE_NUMBER:
+				System.out.print("Enter a new phone number: ");
+				currentUser.setPhoneNumber(scan.nextLine());
+				break;
+			case NavigationMenu.EDIT_MAJOR:
+				System.out.print("Enter a new major: ");
+				StudentUser currentUserCast = (StudentUser) currentUser;
+				currentUserCast.setMajor(scan.nextLine());
+				break;
+			case NavigationMenu.EDIT_YEAR:
+				StudentUser currentUserCast1 = (StudentUser) currentUser;
+				System.out.println("Enter a new year: ");
 				System.out.println("1. Freshman\n2. Sophomore\n3. Junior\n4. Senior");
-				selectedYear = scan.nextInt();
+				int selectedYear = scan.nextInt();
 				scan.nextLine();
-			}
-			String year = "";
-			switch (selectedYear) {
-			case 1:
-				year = "Freshman";
-				break;
-			case 2:
-				year = "Sophomore";
-				break;
-			case 3:
-				year = "Junior";
-				break;
-			case 4:
-				year = "Senior";
+				while (selectedYear < 1 || selectedYear > 4) {
+					System.out.printf("'%d' is an invalid selection.\2n", selectedYear);
+					System.out.println("Select your year: ");
+					System.out.println("1. Freshman\n2. Sophomore\n3. Junior\n4. Senior");
+					selectedYear = scan.nextInt();
+					scan.nextLine();
+				}
+				String year = "";
+				switch (selectedYear) {
+					case 1:
+						year = "Freshman";
+						break;
+					case 2:
+						year = "Sophomore";
+						break;
+					case 3:
+						year = "Junior";
+						break;
+					case 4:
+						year = "Senior";
+						break;
+					default:
+						break;
+				}
+				currentUserCast1.setYear(year);
 				break;
 			default:
 				break;
-			}
-			currentUserCast1.setYear(year);
-			break;
-		default:
-			break;
 		}
 
 		database.store(currentUser.getEmail(), (StudentUser) currentUser);
@@ -226,4 +227,5 @@ public class MainDriver {
 	private static void signOut(Scanner scan) {
 		currentUser = null;
 	}
+	
 } // end of MainDriver class
