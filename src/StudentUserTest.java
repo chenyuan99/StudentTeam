@@ -4,17 +4,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
+ * This class will test the methods from StudentUser class
  * 
- */
-
-/**
  * @author Yuan Chen
  * @version 2020-04-21
+ * @editor Man
+ * ...
  */
 class StudentUserTest {
 
     private StudentUser apple;
-    private StudentUser banana;
+    private StudentUser opStudentUser;
 
     /**
      * @throws java.lang.Exception
@@ -22,79 +22,33 @@ class StudentUserTest {
     @BeforeEach
     void setUp() throws Exception {
         apple = new StudentUser();
-        banana = new StudentUser();
+        opStudentUser = new StudentUser(1,"man","man", "man@email.c","5401234564", "cs", "senior");
     }
 
 
     @Test
-
     /**
-     * 
+     * This will test getter and setter
      */
-    public void testmodifyProfile() {
+    public void testGetterSetter() {
+        opStudentUser.setMajor("cmda");
+        assertEquals(opStudentUser.getMajor(), "cmda");
+        opStudentUser.setYear("junior");
+        assertEquals(opStudentUser.getYear(), "junior");
+        
+        assertEquals(opStudentUser.toString(), "1 man man Email: man@email.c 5401234564 cmda junior");
+    }
+
+
+    @Test
+    /**
+     * // below are the irrelevant methods: keep it, just to be in line with the real project
+     */
+    public void testIR() {
         apple.modifyProfile();
-    }
-
-
-    /**
-     * 
-     */
-    public void testSubmitSkills() {
         apple.submitSkills();
-        System.out.print("Skills are successfully submitted");
-    }
-
-
-    /**
-     * 
-     */
-    public void testModifySkills() {
         apple.modifySkills();
-        System.out.print("Skills are successfully modified");
     }
-
-
-    /**
-     * 
-     */
-    public void createGroup() {
-        apple.createGroup();
-    }
-
-
-    /**
-     * 
-     * @return major of the student user
-     */
-    public void testGetMajor() {
-        assertEquals(banana.getMajor(), "");
-        assertEquals(banana.getYear(), "");
-    }
-
-// /**
-// *
-// * @return
-// */
-// public ArrayList<Group> getCurrentGroup() {
-// return currentGroup;
-// }
-//
-//
-// /**
-// *
-// * @return
-// */
-// public ArrayList<Group> getPastGroup() {
-// return pastGroup;
-// }
-//
-//
-// /**
-// *
-// * @return
-// */
-// public ArrayList<Skill> getSkills() {
-// return skills;
-// }
-
+    
+    
 }
