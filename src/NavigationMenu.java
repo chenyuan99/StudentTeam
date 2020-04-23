@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /**
  * Provides methods to display the different possible options on the navigation 
- * menu, depending on what kind of user is logged in.
+ * menu, depending on what kind of user is logged in. 
  */
 public class NavigationMenu {
 	
@@ -13,8 +13,9 @@ public class NavigationMenu {
 	/* Return options for displayMainMenu() */
 	public static final int CREATE_NEW_PROFILE = 1;
 	public static final int SIGN_IN = 2;
-	public static final int EDIT_PROFILE = 3;
-	public static final int SIGN_OUT = 4;
+	public static final int VIEW_PROFILE = 3;
+	public static final int EDIT_PROFILE = 4;
+	public static final int SIGN_OUT = 5;
 	
 	/* Return options for displayEditProfile()*/
 	public static final int EDIT_FIRST_NAME = 1;
@@ -30,12 +31,14 @@ public class NavigationMenu {
 		
 		if (user != null) {
 			System.out.printf("Welcome %s!\n", user.getFirstName());
-			System.out.println("1. Edit Profile");
-			System.out.println("2. Sign Out");
+			System.out.println("1. View Profile");
+			System.out.println("2. Edit Profile");
+			System.out.println("3. Sign Out");
 			
 			switch (choice = scan.nextInt()) {
-				case 1: return EDIT_PROFILE;
-				case 2: return SIGN_OUT;
+				case 1: return VIEW_PROFILE;
+				case 2: return EDIT_PROFILE;
+				case 3: return SIGN_OUT;
 				default:
 					// unrecognized input, throw error
 					break;

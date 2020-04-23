@@ -161,5 +161,4 @@ public class MainDriver {
 	private static void signOut(Scanner scan) {
 		currentUser = null;
 	}
-
 } // end of MainDriver class
