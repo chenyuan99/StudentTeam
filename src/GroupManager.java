@@ -43,7 +43,7 @@ public class GroupManager extends GroupMember {
 	 */
 	public void removeMember(GroupMember newMem) {
 		// group.add(newMem)
-		System.out.print(newMem.getName() + "  added to " + group.getName());
+		System.out.print(newMem.getFirstName() + "  added to " + group.getName());
 	}
 
 }

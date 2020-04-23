@@ -28,7 +28,7 @@ class GroupMemberTest {
 	 */
 	@Test
 	void testGroupMember() {
-		assertEquals(testGM.getName(), "");
+		assertEquals(testGM.getFirstName(), "");
 	}
 
 	/**
@@ -37,7 +37,7 @@ class GroupMemberTest {
 	 */
 	@Test
 	void testGroupMemberIntStringStringStringInt() {
-		assertEquals(testGM.getName(), "");
+		assertEquals(testGM.getFirstName(), "");
 	}
 
 	/**
