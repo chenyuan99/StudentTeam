@@ -1,9 +1,17 @@
 import java.util.ArrayList;
 
 /**
+ * Most of methods from most of the class will not be implemented!
+ * We design the project for web-dev. Design was to use full stack + server side + database 
+ * But since we only implementing a simulator for 5 use-cases
+ * Full stack - become console
+ * server side - become main method
+ * database - become a simulator database
  * 
  * @author Yuan Chen
  * @version 2020-04-21
+ * @editor Man
+ * ...
  */
 public class StudentUser extends User {
 
@@ -13,6 +21,9 @@ public class StudentUser extends User {
     private ArrayList<Group> pastGroup;
     private ArrayList<Skill> skills;
 
+    /**
+     * Empty Constructor
+     */
     public StudentUser() {
         major = "";
         year = "";
@@ -23,6 +34,7 @@ public class StudentUser extends User {
 
 
     /**
+     * Constructor
      * 
      * @param uID
      * @param fName
@@ -30,7 +42,7 @@ public class StudentUser extends User {
      * @param mail
      * @param pNumber
      */
-    public StudentUser(int uID, String fName, String lName, String mail, int pNumber, String maj, String yr) {
+    public StudentUser(int uID, String fName, String lName, String mail, String pNumber, String maj, String yr) {
         super(uID, fName, lName, mail, pNumber);
         major = maj;
         year = yr;
@@ -39,42 +51,24 @@ public class StudentUser extends User {
         skills = new ArrayList<Skill>();
     }
 
-    /**
-     * 
-     */
+
+    // methods that are irrelevant, We design have use these methods to interact with live server 
+    // which we don't need to implement for the simulator
     public void modifyProfile() {
+        System.out.println("Profile had been modify");
     }
-
-
-    /**
-     * 
-     */
     public void submitSkills() {
         System.out.print("Skills are successfully submitted");
     }
-
-
-    /**
-     * 
-     */
     public void modifySkills() {
         System.out.print("Skills are successfully modified");
     }
 
 
+    
+    
     /**
-     * 
-     */
-    public void createGroup() {
-        Group group = new Group();
-        currentGroup.add(group);
-        System.out.print("New Group " + group.getName() + " is successfully created");
-    }
-
-
-    /**
-     * 
-     * @return major of the student user
+     * @return the major
      */
     public String getMajor() {
         return major;
@@ -82,8 +76,15 @@ public class StudentUser extends User {
 
 
     /**
-     * 
-     * @return year of the student user
+     * @param major the major to set
+     */
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+
+    /**
+     * @return the year
      */
     public String getYear() {
         return year;
@@ -91,8 +92,15 @@ public class StudentUser extends User {
 
 
     /**
-     * 
-     * @return
+     * @param year the year to set
+     */
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+
+    /**
+     * @return the currentGroup
      */
     public ArrayList<Group> getCurrentGroup() {
         return currentGroup;
@@ -100,8 +108,15 @@ public class StudentUser extends User {
 
 
     /**
-     * 
-     * @return
+     * @param currentGroup the currentGroup to set
+     */
+    public void setCurrentGroup(ArrayList<Group> currentGroup) {
+        this.currentGroup = currentGroup;
+    }
+
+
+    /**
+     * @return the pastGroup
      */
     public ArrayList<Group> getPastGroup() {
         return pastGroup;
@@ -109,13 +124,32 @@ public class StudentUser extends User {
 
 
     /**
-     * 
-     * @return
+     * @param pastGroup the pastGroup to set
+     */
+    public void setPastGroup(ArrayList<Group> pastGroup) {
+        this.pastGroup = pastGroup;
+    }
+
+
+    /**
+     * @return the skills
      */
     public ArrayList<Skill> getSkills() {
         return skills;
     }
 
+
+    /**
+     * @param skills the skills to set
+     */
+    public void setSkills(ArrayList<Skill> skills) {
+        this.skills = skills;
+    }
+
+
+    /**
+     * @return a string representation of this object
+     */
     public String toString() {
         return super.toString() + " " + major + " " + year;
     }
