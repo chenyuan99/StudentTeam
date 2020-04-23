@@ -16,13 +16,11 @@ import java.util.Scanner;
 public class MainDriver {
 
 	private static Database<String, StudentUser> database;
-
 	private static User currentUser;
 
 	public static void main(String[] args) {
 
 		database = new Database<String, StudentUser>("data.db");
-
 		currentUser = null;
 
 		System.out.println("==================== STUDENT TEAM MANAGER ====================");
@@ -31,12 +29,16 @@ public class MainDriver {
 		int userInput = -1;
 		while (userInput != NavigationMenu.QUIT) {
 			userInput = NavigationMenu.displayMainMenu(scan, currentUser);
+			scan.nextLine();
 			switch (userInput) {
 			case NavigationMenu.CREATE_NEW_PROFILE:
 				createNewProfile(scan);
 				break;
 			case NavigationMenu.SIGN_IN:
 				signIn(scan);
+				break;
+			case NavigationMenu.VIEW_PROFILE:
+				viewProfile();
 				break;
 			case NavigationMenu.EDIT_PROFILE:
 				editProfile(scan);
@@ -63,28 +65,30 @@ public class MainDriver {
 		System.out.println("uid: " + userID);
 
 		System.out.print("Enter your first name: ");
-		String fName = scan.next();
+		String fName = scan.nextLine();
 
 		System.out.print("Enter your last name: ");
-		String lName = scan.next();
+		String lName = scan.nextLine();
 
 		System.out.print("Enter your email: ");
-		String email = scan.next();
+		String email = scan.nextLine();
 
 		System.out.print("Enter your phone number: ");
-		String phone = scan.next();
+		String phone = scan.nextLine();
 
 		System.out.print("Enter your major: ");
-		String major = scan.next();
+		String major = scan.nextLine();
 
 		System.out.println("Select your year: ");
 		System.out.println("1. Freshman\n2. Sophomore\n3. Junior\n4. Senior");
 		int selectedYear = scan.nextInt();
+		scan.nextLine();
 		while (selectedYear < 1 || selectedYear > 4) {
 			System.out.printf("'%d' is an invalid selection.\2n", selectedYear);
 			System.out.println("Select your year: ");
 			System.out.println("1. Freshman\n2. Sophomore\n3. Junior\n4. Senior");
 			selectedYear = scan.nextInt();
+			scan.nextLine();
 		}
 		String year = "";
 		switch (selectedYear) {
@@ -105,13 +109,13 @@ public class MainDriver {
 		}
 
 		database.store(email, new StudentUser(userID, fName, lName, email, phone, major, year));
-
-		System.out.println("Your account has been successfully created!");
+		
+		System.out.println("Your profile has been successfully created!");
 	}
 
 	private static void signIn(Scanner scan) {
 		System.out.print("Enter your email: ");
-		String email = scan.next();
+		String email = scan.nextLine();
 		StudentUser user = database.retrieve(email);
 		if (user == null) {
 			System.out.println("A user with that email doesn't exist.");
@@ -119,43 +123,86 @@ public class MainDriver {
 			currentUser = user;
 		}
 	}
+	
+	private static void viewProfile() {
+		System.out.println("===== VIEW PROFILE =====");
+		
+		System.out.printf("Name:\t%s %s\n", currentUser.getFirstName(), currentUser.getLastName());
+		System.out.printf("Email:\t%s\n", currentUser.getEmail());
+		System.out.printf("Phone:\t%s\n", currentUser.getPhoneNumber());
+		
+		if (currentUser.getClass() == StudentUser.class) {
+			StudentUser castCurrentUser = (StudentUser)currentUser;
+			System.out.printf("Major:\t%s\n", castCurrentUser.getMajor());
+			System.out.printf("Year:\t%s\n", castCurrentUser.getYear());
+		}
+	}
 
 	private static void editProfile(Scanner scan) {
 		System.out.println("===== EDIT PROFILE =====");
 
 		int userSelection = NavigationMenu.displayEditProfile(scan, currentUser);
+		scan.nextLine();
 		switch (userSelection) {
 		case NavigationMenu.EDIT_FIRST_NAME:
 			System.out.print("Enter a new first name: ");
-			currentUser.setFirstName(scan.next());
+			currentUser.setFirstName(scan.nextLine());
 			break;
 		case NavigationMenu.EDIT_LAST_NAME:
 			System.out.print("Enter a new last name: ");
-			currentUser.setLastName(scan.next());
+			currentUser.setLastName(scan.nextLine());
 			break;
 		case NavigationMenu.EDIT_EMAIL:
 			System.out.print("Enter a new email: ");
-			currentUser.setEmail(scan.next());
+			currentUser.setEmail(scan.nextLine());
 			break;
 		case NavigationMenu.EDIT_PHONE_NUMBER:
 			System.out.print("Enter a new phone number: ");
-			currentUser.setPhoneNumber(scan.next());
+			currentUser.setPhoneNumber(scan.nextLine());
 			break;
 		case NavigationMenu.EDIT_MAJOR:
 			System.out.print("Enter a new major: ");
 			StudentUser currentUserCast = (StudentUser) currentUser;
-			currentUserCast.setMajor(scan.next());
+			currentUserCast.setMajor(scan.nextLine());
 			break;
 		case NavigationMenu.EDIT_YEAR:
-			System.out.print("Enter a new year: ");
 			StudentUser currentUserCast1 = (StudentUser) currentUser;
-			currentUserCast1.setMajor(scan.next());
+			System.out.print("Enter a new year: ");
+			System.out.println("1. Freshman\n2. Sophomore\n3. Junior\n4. Senior");
+			int selectedYear = scan.nextInt();
+			scan.nextLine();
+			while (selectedYear < 1 || selectedYear > 4) {
+				System.out.printf("'%d' is an invalid selection.\2n", selectedYear);
+				System.out.println("Select your year: ");
+				System.out.println("1. Freshman\n2. Sophomore\n3. Junior\n4. Senior");
+				selectedYear = scan.nextInt();
+				scan.nextLine();
+			}
+			String year = "";
+			switch (selectedYear) {
+			case 1:
+				year = "Freshman";
+				break;
+			case 2:
+				year = "Sophomore";
+				break;
+			case 3:
+				year = "Junior";
+				break;
+			case 4:
+				year = "Senior";
+				break;
+			default:
+				break;
+			}
+			currentUserCast1.setYear(year);
 			break;
 		default:
 			break;
 		}
 
 		database.store(currentUser.getEmail(), (StudentUser) currentUser);
+		System.out.println("Your profile has been successfully updated!");
 	}
 
 	private static void signOut(Scanner scan) {

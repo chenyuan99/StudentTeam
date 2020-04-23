@@ -30,7 +30,7 @@ public class NavigationMenu {
 		int choice = -1;
 		
 		if (user != null) {
-			System.out.printf("Welcome %s!\n", user.getFirstName());
+			System.out.printf("Hello, %s!\n", user.getFirstName());
 			System.out.println("1. View Profile");
 			System.out.println("2. Edit Profile");
 			System.out.println("3. Sign Out");
@@ -45,7 +45,7 @@ public class NavigationMenu {
 			}
 		}
 		else {
-			System.out.println("Welcome Guest!");
+			System.out.println("Welcome, Guest!");
 			System.out.println("Please input one of the numbers in the menu displayed below to navigate.");
 			System.out.println("1. Sign In");
 			System.out.println("2. Create New Profile");
