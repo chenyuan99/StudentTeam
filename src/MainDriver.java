@@ -57,7 +57,7 @@ public class MainDriver {
                 System.out.println("Enter your Email:");
                 String mail = sn.nextLine();
                 System.out.println("Enter your Phone number: (number only please)");
-                int num = sn.nextInt();
+                int num = sn.nextInt(); // I think we need to save pNumber as String
                 System.out.println("Enter your Major:");
                 sn.nextLine(); // skip
                 String maj = sn.nextLine();
