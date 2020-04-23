@@ -102,7 +102,8 @@ public class MainDriver {
         userIDCounter++;
     }
     
-    private static void signIn(Scanner scan) {
+    private static void signIn(Scanner scan) 
+    {
     	System.out.print("\nEnter your ID: ");
     	int id = scan.nextInt();
     	int index = userID_DB.indexOf(id);
@@ -114,12 +115,44 @@ public class MainDriver {
     	}
     }
     
-    private static void editProfile(Scanner scan) {
-    	System.out.println("\nSelected: Edit Profile\n");
+    private static void editProfile(Scanner scan) 
+    {
+    	int userSelection = NavigationMenu.displayEditProfile(scan, currentUser);
+    	switch (userSelection) {
+    		case NavigationMenu.EDIT_FIRST_NAME: 
+    			System.out.print("Enter a new first name: ");
+    	        currentUser.setFirstName(scan.next());
+    			break;
+    		case NavigationMenu.EDIT_LAST_NAME: 
+    			System.out.print("Enter a new last name: ");
+    	        currentUser.setLastName(scan.next());
+    			break;
+    		case NavigationMenu.EDIT_EMAIL: 
+    			System.out.print("Enter a new email: ");
+    	        currentUser.setEmail(scan.next());
+    			break;
+    		case NavigationMenu.EDIT_PHONE_NUMBER: 
+    			// TODO: update to string
+    			System.out.print("Enter a new phone number: ");
+    			currentUser.setPhoneNumber(scan.nextInt());
+    			break;
+    		case NavigationMenu.EDIT_MAJOR: 
+    			System.out.print("Enter a new major: ");
+    			StudentUser currentUserCast = (StudentUser)currentUser;
+    			// TODO: there are currently no setter methods for major
+    			System.out.println("<FEATURE NOT YET IMPLEMENTED>");
+    			break;
+    		case NavigationMenu.EDIT_YEAR: 
+    	        // TODO: there are currently no setter methods for year
+    			System.out.println("<FEATURE NOT YET IMPLEMENTED>");
+    			break;
+    		default:
+    			break;
+    	}
     }
     
-    private static void signOut(Scanner scan) {
-    	System.out.println("\nSelected: Sign Out\n");
+    private static void signOut(Scanner scan) 
+    {
     	currentUser = null;
     }
     
