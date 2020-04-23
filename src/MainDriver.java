@@ -61,15 +61,18 @@ public class MainDriver {
 
 		// Create a completely random user id (collision probability is very low).
 		long userID = Instant.now().toEpochMilli() + ((long) Math.random() % 10000);
+		
+		System.out.print("Enter your email: ");
+		String email = scan.nextLine();
+		
+		System.out.print("Enter your password: ");
+		String password = scan.nextLine();
 
 		System.out.print("Enter your first name: ");
 		String fName = scan.nextLine();
 
 		System.out.print("Enter your last name: ");
 		String lName = scan.nextLine();
-
-		System.out.print("Enter your email: ");
-		String email = scan.nextLine();
 
 		System.out.print("Enter your phone number: ");
 		String phone = scan.nextLine();
@@ -106,6 +109,7 @@ public class MainDriver {
 			break;
 		}
 
+		// TODO: update to store password as well!
 		database.store(email, new StudentUser(userID, fName, lName, email, phone, major, year));
 		
 		System.out.println("Your profile has been successfully created!");
@@ -160,6 +164,7 @@ public class MainDriver {
 			//
 			// TODO: add stuff here Mr. Saunders!
 			//
+			System.out.println("<NOT YET IMPLEMENTED>");
 			break;
 		case NavigationMenu.EDIT_FIRST_NAME:
 			System.out.print("Enter a new first name: ");
