@@ -2,11 +2,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Man: Helpfully we go with this EZ version LOL
+ * Runs the Student Team Manager program from the command line.
  * 
+ * @author Rae Bouldin
+ * @author Yuan Chen
+ * @author Saunders Cox
+ * @author Stephen Franklin
+ * @author Chaipakon Luangprasert
  * 
- * @author DiaryOfNPC my computer name :) 
- * 
+ * @version 2020.04.23
  */
 public class MainDriver {
 
@@ -54,6 +58,8 @@ public class MainDriver {
     
     private static void createNewProfile(Scanner scan) 
     {	
+    	System.out.println("===== CREATE NEW PROFILE =====");
+    	
     	int userID = userIDCounter + 1;
     	
         System.out.print("Enter your first name: ");
@@ -94,7 +100,7 @@ public class MainDriver {
         }
         
         userEmail_DB.add(email);
-        user_DB.add(new StudentUser(userID, fName, lName, email, 0, major, year));
+        user_DB.add(new StudentUser(userID, fName, lName, email, phone, major, year));
         userIDCounter++;
         
         System.out.println("Your account has been successfully created!");
@@ -102,7 +108,7 @@ public class MainDriver {
     
     private static void signIn(Scanner scan) 
     {
-    	System.out.print("\nEnter your email: ");
+    	System.out.print("Enter your email: ");
     	String email = scan.next();
     	int index = userEmail_DB.indexOf(email);
     	if (index == -1) {
@@ -115,6 +121,8 @@ public class MainDriver {
     
     private static void editProfile(Scanner scan) 
     {
+    	System.out.println("===== EDIT PROFILE =====");
+    	
     	int userSelection = NavigationMenu.displayEditProfile(scan, currentUser);
     	switch (userSelection) {
     		case NavigationMenu.EDIT_FIRST_NAME: 
@@ -129,10 +137,9 @@ public class MainDriver {
     			System.out.print("Enter a new email: ");
     	        currentUser.setEmail(scan.next());
     			break;
-    		case NavigationMenu.EDIT_PHONE_NUMBER: 
-    			// TODO: update to string
+    		case NavigationMenu.EDIT_PHONE_NUMBER:
     			System.out.print("Enter a new phone number: ");
-    			currentUser.setPhoneNumber(scan.nextInt());
+    			currentUser.setPhoneNumber(scan.next());
     			break;
     		case NavigationMenu.EDIT_MAJOR: 
     			System.out.print("Enter a new major: ");
