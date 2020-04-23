@@ -18,7 +18,7 @@ import java.util.Scanner;
  * @editor Man
  * ...
  */
-public class User {
+public class User implements Serializable {
 
     private int userID;
     private String firstName;
