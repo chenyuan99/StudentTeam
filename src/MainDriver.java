@@ -117,7 +117,14 @@ public class MainDriver {
 		StudentUser user = database.retrieve(email);
 		if (user == null) {
 			System.out.println("A user with that email doesn't exist.");
-		} else {
+		} 
+		else {
+			System.out.print("Enter your password: ");
+			String password = scan.nextLine();
+			//
+			// TODO: add password validation stuff here Mr. Saunders!
+			// TODO: also see if you can mask the input somehow (less important)
+			//
 			currentUser = user;
 		}
 	}
@@ -145,6 +152,15 @@ public class MainDriver {
 		scan.nextLine();
 		switch (userSelection) {
 		case NavigationMenu.CANCEL: return;
+		case NavigationMenu.EDIT_EMAIL:
+			System.out.print("Enter a new email: ");
+			currentUser.setEmail(scan.nextLine());
+			break;
+		case NavigationMenu.EDIT_PASSWORD:
+			//
+			// TODO: add stuff here Mr. Saunders!
+			//
+			break;
 		case NavigationMenu.EDIT_FIRST_NAME:
 			System.out.print("Enter a new first name: ");
 			currentUser.setFirstName(scan.nextLine());
@@ -152,10 +168,6 @@ public class MainDriver {
 		case NavigationMenu.EDIT_LAST_NAME:
 			System.out.print("Enter a new last name: ");
 			currentUser.setLastName(scan.nextLine());
-			break;
-		case NavigationMenu.EDIT_EMAIL:
-			System.out.print("Enter a new email: ");
-			currentUser.setEmail(scan.nextLine());
 			break;
 		case NavigationMenu.EDIT_PHONE_NUMBER:
 			System.out.print("Enter a new phone number: ");
