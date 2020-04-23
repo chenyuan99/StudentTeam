@@ -62,8 +62,6 @@ public class MainDriver {
 		// Create a completely random user id (collision probability is very low).
 		long userID = Instant.now().toEpochMilli() + ((long) Math.random() % 10000);
 
-		System.out.println("uid: " + userID);
-
 		System.out.print("Enter your first name: ");
 		String fName = scan.nextLine();
 
@@ -136,6 +134,8 @@ public class MainDriver {
 			System.out.printf("Major:\t%s\n", castCurrentUser.getMajor());
 			System.out.printf("Year:\t%s\n", castCurrentUser.getYear());
 		}
+		
+		System.out.println();
 	}
 
 	private static void editProfile(Scanner scan) {
@@ -144,6 +144,7 @@ public class MainDriver {
 		int userSelection = NavigationMenu.displayEditProfile(scan, currentUser);
 		scan.nextLine();
 		switch (userSelection) {
+		case NavigationMenu.CANCEL: return;
 		case NavigationMenu.EDIT_FIRST_NAME:
 			System.out.print("Enter a new first name: ");
 			currentUser.setFirstName(scan.nextLine());
@@ -167,7 +168,7 @@ public class MainDriver {
 			break;
 		case NavigationMenu.EDIT_YEAR:
 			StudentUser currentUserCast1 = (StudentUser) currentUser;
-			System.out.print("Enter a new year: ");
+			System.out.println("Enter a new year: ");
 			System.out.println("1. Freshman\n2. Sophomore\n3. Junior\n4. Senior");
 			int selectedYear = scan.nextInt();
 			scan.nextLine();
