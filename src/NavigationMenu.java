@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /**
  * Provides methods to display the different possible options on the navigation 
- * menu, depending on what kind of user is logged in.
+ * menu, depending on what kind of user is logged in. 
  */
 public class NavigationMenu {
 	
