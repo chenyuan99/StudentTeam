@@ -1,35 +1,32 @@
 import java.io.*;
 import java.util.HashMap;
 
-public class Database {
+/**
+ * This class represents a somewhat generic database model.
+ *
+ * The database is a HashMap hashed by a primary key (this is a decision of
+ * the client using this class) of type K.
+ *
+ * The Value stored in the HashMap is of type V. (Specified by the client).
+ * @param <K> Primary Key
+ * @param <V> Object stored by the Key (Think column).
+ */
+public class Database <K, V> {
 
-    private HashMap<String, HashMap> database;
+    private HashMap<K, V> database;
     private File databaseFile;
 
     /**
-     * This class represents a somewhat generic database model.
      *
-     * The database is a HashMap hashed by a primary key (this is a decision of
-     * the client using this class). The value is another HashMap.
      *
-     * The HashMap stored as the value hashes the key by String and stores the value
-     * as String. This is sort of similar to a Dictionary or JSON object.
-     *
-     * Example of use:
-     * HashMap<String, String> record = new HashMap<>();
-     *                         record.put("id", "1");
-     *                         record.put("first_name", "Jane");
-     *                         record.put("last_name", "Doe");
-     *
-     *                         db.store(record.get("id"), record);
-     * The "database" will map the id of 1 -> {"id" : "1", "first_name" : "Jane", "last_name" : "Doe"}
+     * V must be
      *
      * @param databaseFileName The filename to supply to the database
      */
     public Database(String databaseFileName) {
 
         this.databaseFile = new File(databaseFileName);
-        this.database = new HashMap<String, HashMap>(100);
+        this.database = new HashMap<K, V>(100);
         this.loadDatabase();
 
     }
@@ -52,7 +49,7 @@ public class Database {
             // serialized hash map representing our database.
 
             // We cast it to the type of the hashmap which is <String, HashMap>
-            this.database = (HashMap<String, HashMap>) objectInputStream.readObject();
+            this.database = (HashMap<K, V>) objectInputStream.readObject();
 
             // Close the input streams
             inputStream.close();
@@ -80,12 +77,6 @@ public class Database {
      * @return true if successful, false otherwise
      */
     public boolean saveDatabase() {
-        HashMap<String, String> record = new HashMap<>();
-        record.put("id", "12345");
-        record.put("first_name", "John");
-        record.put("last_name", "Doe");
-
-        this.database.put(record.get("id"), record);
 
         try {
             // Create the object output stream, this will dump a serialized version of the hashmaps representing
@@ -117,26 +108,26 @@ public class Database {
      * Retrieves the HashMap Object hashed by key in the database.
      *
      * Example:
-     * db.get("1") -> {"id" : "1", "first_name" : "Jane", "last_name" : "Doe"}
+     * db.get("1") -> User() with id of 1.
      *
      * @param key The key to search the database on
      * @return the HashMap object hashed by the key in the database.
      */
-    public HashMap<String, String> retrieve(String key) {
+    public V retrieve(K key) {
         return database.get(key);
     }
 
     /**
      * Stores a HashMap, hashed by the provided key, into the database.
      *
-     * @param key String key to store based on
-     * @param value HashMap<String, String> to store in the database
+     * @param key Key to store by
+     * @param value Object to store in the database
      * @return the stored value
      */
-    public HashMap<String, String> store(String key, HashMap<String, String> value) {
+    public V store(K key, V value) {
         database.put(key, value);
         this.saveDatabase();
-        return value;
+        return (V) value;
     }
 
 }

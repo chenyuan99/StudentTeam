@@ -9,38 +9,25 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DatabaseTest {
 
-    Database db;
+    Database<String, User> db;
 
     @BeforeEach
     void setUp() throws Exception {
-       db =  new Database("test.db");
+       db =  new Database<String, User>("test.db");
     }
 
     @Test
     void testAddingDatabase() {
-        System.out.println("Hello");
-        HashMap<String, String> record = new HashMap<>();
-        record.put("id", "1");
-        record.put("first_name", "Jane");
-        record.put("last_name", "Doe");
 
-        assertEquals(db.store(record.get("id"), record), record);
-
-        record = new HashMap<>();
-        record.put("id", "2");
-        record.put("first_name", "John");
-        record.put("last_name", "Doe");
-
-        assertEquals(db.store(record.get("id"), record), record);
+        User testUser = new User(1, "John","Doe", "jdoe@vt.edu", 0001110000);
+        assertEquals(db.store(testUser.getEmail(),testUser), testUser);
 
     }
 
     @Test
     void testLoadingDatabase() {
         db.loadDatabase();
-
-        assertEquals(db.retrieve("1").get("first_name").equals("Jane"), true);
-        assertEquals(db.retrieve("2").get("first_name").equals("John"), true);
+        assertEquals(db.retrieve("jdoe@vt.edu").getFirstName().equals("John"), true);
 
     }
 }
