@@ -20,7 +20,7 @@ import java.util.Scanner;
  */
 public class User implements Serializable {
 
-    private int userID;
+    private long userID;
     private String firstName;
     private String lastName;
     private String email;
@@ -52,7 +52,7 @@ public class User implements Serializable {
      * @param mail email 
      * @param pNumber phonenumer
      */
-    public User(int uID, String fName, String lName, String mail, String pNumber) {
+    public User(long uID, String fName, String lName, String mail, String pNumber) {
         userID = uID;
         firstName = fName;
         lastName = lName;

@@ -1,3 +1,4 @@
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,16 +15,13 @@ import java.util.Scanner;
  */
 public class MainDriver {
 
-	private static ArrayList<StudentUser> user_DB;
-	private static ArrayList<String> userEmail_DB;
-	private static int userIDCounter;
+	private static Database<String, StudentUser> database;
 
 	private static User currentUser;
 
 	public static void main(String[] args) {
-		user_DB = new ArrayList<StudentUser>();
-		userEmail_DB = new ArrayList<String>();
-		userIDCounter = 0;
+
+		database = new Database<String, StudentUser>("data.db");
 
 		currentUser = null;
 
@@ -59,7 +57,10 @@ public class MainDriver {
 	private static void createNewProfile(Scanner scan) {
 		System.out.println("===== CREATE NEW PROFILE =====");
 
-		int userID = userIDCounter + 1;
+		// Create a completely random user id (collision probability is very low).
+		long userID = Instant.now().toEpochMilli() + ((long) Math.random() % 10000);
+
+		System.out.println("uid: " + userID);
 
 		System.out.print("Enter your first name: ");
 		String fName = scan.next();
@@ -103,9 +104,7 @@ public class MainDriver {
 			break;
 		}
 
-		userEmail_DB.add(email);
-		user_DB.add(new StudentUser(userID, fName, lName, email, phone, major, year));
-		userIDCounter++;
+		database.store(email, new StudentUser(userID, fName, lName, email, phone, major, year));
 
 		System.out.println("Your account has been successfully created!");
 	}
@@ -113,11 +112,11 @@ public class MainDriver {
 	private static void signIn(Scanner scan) {
 		System.out.print("Enter your email: ");
 		String email = scan.next();
-		int index = userEmail_DB.indexOf(email);
-		if (index == -1) {
+		StudentUser user = database.retrieve(email);
+		if (user == null) {
 			System.out.println("A user with that email doesn't exist.");
 		} else {
-			currentUser = user_DB.get(index);
+			currentUser = user;
 		}
 	}
 
@@ -155,6 +154,8 @@ public class MainDriver {
 		default:
 			break;
 		}
+
+		database.store(currentUser.getEmail(), (StudentUser) currentUser);
 	}
 
 	private static void signOut(Scanner scan) {

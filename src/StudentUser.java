@@ -42,7 +42,7 @@ public class StudentUser extends User {
      * @param mail
      * @param pNumber
      */
-    public StudentUser(int uID, String fName, String lName, String mail, String pNumber, String maj, String yr) {
+    public StudentUser(long uID, String fName, String lName, String mail, String pNumber, String maj, String yr) {
         super(uID, fName, lName, mail, pNumber);
         major = maj;
         year = yr;
