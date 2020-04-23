@@ -24,9 +24,12 @@ public class GroupMember extends StudentUser {
 	 * @param lName
 	 * @param mail
 	 * @param pNumber
+	 * 
+	 *                need to be updated
 	 */
 	public GroupMember(int uID, String fName, String lName, String mail, int pNumber) {
-		super(uID, fName, lName, mail, pNumber);
+		// super(uID, fName, lName, mail, pNumber);
+		super();
 	}
 
 	/**
