@@ -220,5 +220,9 @@ public class User {
     public void clickActivationLink() {
         System.out.print("site-wide student features are enabled");
     }
-
+    
+    public String toString() {
+        return userID + " " + firstName +" " + lastName + " Email: " + email + " " + phoneNumber;
+    }
+    
 }

@@ -30,16 +30,14 @@ public class StudentUser extends User {
      * @param mail
      * @param pNumber
      */
-    public StudentUser(
-        int uID,
-        String fName,
-        String lName,
-        String mail,
-        int pNumber) {
+    public StudentUser(int uID, String fName, String lName, String mail, int pNumber, String maj, String yr) {
         super(uID, fName, lName, mail, pNumber);
-        // TODO Auto-generated constructor stub
+        major = maj;
+        year = yr;
+        currentGroup = new ArrayList<Group>();
+        pastGroup = new ArrayList<Group>();
+        skills = new ArrayList<Skill>();
     }
-
 
     /**
      * 
@@ -118,4 +116,8 @@ public class StudentUser extends User {
         return skills;
     }
 
+    public String toString() {
+        return super.toString() + " " + major + " " + year;
+    }
+    
 }
