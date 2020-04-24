@@ -1,0 +1,33 @@
+==================== STUDENT TEAM MANAGER ====================
+Welcome, Guest!
+Please input one of the numbers in the menu displayed below to navigate.
+1. Sign In
+2. Create New Profile
+3. Quit
+===== CREATE NEW PROFILE =====
+Enter your email: Enter your password: Enter your first name: Enter your last name: Enter your phone number: Enter your major: Select your year: 
+1. Freshman
+2. Sophomore
+3. Junior
+4. Senior
+Your profile has been successfully created!
+Welcome, Guest!
+Please input one of the numbers in the menu displayed below to navigate.
+1. Sign In
+2. Create New Profile
+3. Quit
+Enter your email: Enter your password: Hello, man!
+1. View Profile
+2. Edit Profile
+3. Sign Out
+4. Remove Profile
+Enter your password to remove your profile:
+Profile Removed
+Welcome, Guest!
+Please input one of the numbers in the menu displayed below to navigate.
+1. Sign In
+2. Create New Profile
+3. Quit
+
+Goodbye!
+==============================================================

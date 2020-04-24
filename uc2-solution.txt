@@ -1,0 +1,19 @@
+==================== STUDENT TEAM MANAGER ====================
+Welcome, Guest!
+Please input one of the numbers in the menu displayed below to navigate.
+1. Sign In
+2. Create New Profile
+3. Quit
+Enter your email: Enter your password: Hello, manF!
+1. View Profile
+2. Edit Profile
+3. Sign Out
+4. Remove Profile
+Welcome, Guest!
+Please input one of the numbers in the menu displayed below to navigate.
+1. Sign In
+2. Create New Profile
+3. Quit
+
+Goodbye!
+==============================================================
