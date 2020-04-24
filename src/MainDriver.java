@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -24,8 +25,150 @@ public class MainDriver {
 		if (args != null) {
 		    // java MainDriver -d
 			if (args.length > 0 && args[0].equals("-d")) {
-				org.junit.runner.JUnitCore.runClasses(ValidationTest.class, DocumentTest.class, MainTesting.class, ReviewTest.class,
-						SkillTest.class, StudentUserTest.class, UserTest.class);
+//				org.junit.runner.JUnitCore.runClasses(ValidationTest.class, DocumentTest.class, MainTesting.class, ReviewTest.class,
+//						SkillTest.class, StudentUserTest.class, UserTest.class);
+
+                try {
+                    // DatabaseTest
+                    DatabaseTest dbTest = new DatabaseTest();
+                    dbTest.setUp();
+                    dbTest.testAddingDatabase();
+                    System.out.println("DatabaseTest: 'testAddingDatabase' Passed!");
+                    dbTest.testLoadingDatabase();
+                    System.out.println("DatabaseTest: 'testLoadingDatabase' Passed!");
+                    dbTest.testRemoveFromDatabase();
+                    System.out.println("DatabaseTest: 'testRemoveFromDatabase' Passed!");
+
+                    // GroupManagerTest
+//                    GroupManagerTest groupManagerTests = new GroupManagerTest();
+//                    groupManagerTests.setUp();
+//                    groupManagerTests.testAddNewMember();
+//                    System.out.println("GroupManagerTest: 'testAddingDatabase' Passed!");
+//                    groupManagerTests.testGroupManagerIntStringStringStringInt();
+//                    System.out.println("GroupManagerTest: 'testGroupManagerIntStringStringStringInt' Passed!");
+//                    groupManagerTests.testRemoveMember();
+//                    System.out.println("GroupManagerTest: 'testRemoveMember' Passed!");
+
+                    // GroupMemberTest
+//                    GroupMemberTest groupMemberTests = new GroupMemberTest();
+//                    groupMemberTests.setUp();
+//                    groupMemberTests.testGetGroup();
+//                    System.out.println("GroupMemberTest: 'testGetGroup' Passed!");
+//                    groupMemberTests.testGroupMember();
+//                    System.out.println("GroupMemberTest: 'testGroupMember' Passed!");
+//                    groupMemberTests.testGroupMemberIntStringStringStringInt();
+//                    System.out.println("GroupMemberTest: 'testGroupMemberIntStringStringStringInt' Passed!");
+
+
+                    // ReviewTest
+                    ReviewTest reviewTests = new ReviewTest();
+                    reviewTests.setUp();
+                    reviewTests.testDownVotes();
+                    System.out.println("ReviewTest: 'testDownVotes' Passed!");
+                    reviewTests.setUp();
+                    reviewTests.testGetDesciption();
+                    System.out.println("ReviewTest: 'testGetDesciption' Passed!");
+                    reviewTests.setUp();
+                    reviewTests.testGetReviewer();
+                    System.out.println("ReviewTest: 'testGetReviewer' Passed!");
+                    reviewTests.setUp();
+                    reviewTests.testGetScore();
+                    System.out.println("ReviewTest: 'testGetScore' Passed!");
+                    reviewTests.setUp();
+                    reviewTests.testGetUpvotes();
+                    System.out.println("ReviewTest: 'testGetUpvotes' Passed!");
+                    reviewTests.setUp();
+                    reviewTests.testReview();
+                    System.out.println("ReviewTest: 'testReview' Passed!");
+                    reviewTests.setUp();
+                    reviewTests.testReviewIntStudentUserStringIntInt();
+                    System.out.println("ReviewTest: 'testReviewIntStudentUserStringIntInt' Passed!");
+                    reviewTests.setUp();
+                    reviewTests.testUpVotes();
+                    System.out.println("ReviewTest: 'testUpVotes' Passed!");
+
+                    // SkillTest
+                    SkillTest skillTests = new SkillTest();
+                    skillTests.setUp();
+                    skillTests.testSetName();
+                    System.out.println("SkillTest: 'testSetName' Passed!");
+                    skillTests.setUp();
+                    skillTests.testAddDescription();
+                    System.out.println("SkillTest: 'testAddDescription' Passed!");
+                    skillTests.setUp();
+                    skillTests.testAddDocument();
+                    System.out.println("SkillTest: 'testAddDocument' Passed!");
+                    skillTests.setUp();
+                    skillTests.testGetDescription();
+                    System.out.println("SkillTest: 'testGetDescription' Passed!");
+                    skillTests.setUp();
+                    skillTests.testGetDocuments();
+                    System.out.println("SkillTest: 'testGetDocuments' Passed!");
+                    skillTests.setUp();
+                    skillTests.testGetName();
+                    System.out.println("SkillTest: 'testGetName' Passed!");
+                    skillTests.setUp();
+                    skillTests.testRemoveDocument();
+                    System.out.println("SkillTest: 'testRemoveDocument' Passed!");
+                    skillTests.setUp();
+                    skillTests.testSetDescription();
+                    System.out.println("SkillTest: 'testSetDescription' Passed!");
+                    skillTests.setUp();
+                    skillTests.testSkill();
+                    System.out.println("SkillTest: 'testSkill' Passed!");
+                    skillTests.setUp();
+                    skillTests.testSkillStringStringArrayListOfDocumentArrayListOfReview();
+                    skillTests.setUp();
+                    System.out.println("SkillTest: 'testSkillStringStringArrayListOfDocumentArrayListOfReview' Passed!");
+                    skillTests.setUp();
+                    skillTests.testUpdateReviews();
+                    System.out.println("SkillTest: 'testUpdateReviews' Passed!");
+
+
+                    // UserTest
+                    UserTest userTests = new UserTest();
+                    userTests.setUp();
+                    userTests.test();
+                    System.out.println("UserTest: 'test' Passed!");
+                    userTests.setUp();
+                    userTests.testIR();
+                    System.out.println("UserTest: 'testIR' Passed!");
+                    userTests.setUp();
+
+                    // StudentUserTest
+                    StudentUserTest studentUserTest = new StudentUserTest();
+                    studentUserTest.setUp();
+                    studentUserTest.testGetterSetter();
+                    System.out.println("StudentUserTest: 'testGetterSetter' Passed!");
+                    studentUserTest.setUp();
+                    studentUserTest.testIR();
+                    System.out.println("StudentUserTest: 'testIR' Passed!");
+
+                    // ValidationTest
+//                    new ValidationTest().testUserCase1();
+//                    System.out.println("Validation Test 1 Passed.");
+//                    new ValidationTest().testUserCase2();
+//                    System.out.println("Validation Test 2 Passed.");
+//                    new ValidationTest().testUserCase4();
+//                    System.out.println("Validation Test 4 Passed.");
+//                    new ValidationTest().testUserCase5();
+//                    System.out.println("Validation Test 5 Passed.");
+
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    System.out.println("EXCEPTION");
+                    return;
+                } catch (NullPointerException e) {
+                    e.printStackTrace();
+                    System.out.println("EXCEPTION");
+                    return;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("EXCEPTION");
+                    return;
+                }
+                System.out.println("All Validation Tests passed.");
 				return;
 			}
 		}
