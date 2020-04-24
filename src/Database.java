@@ -4,6 +4,14 @@ import java.util.HashMap;
 /**
  * This class represents a somewhat generic database model.
  *
+ * This is a file based Database instead of a real one, since
+ * we aren't implementing a real web site. This represents
+ * how the database would work.
+ *
+ * This implementation of the program does not represent
+ * the full scope of the Database Backend with multiple tables because
+ * we don't have a real database.
+ *
  * The database is a HashMap hashed by a primary key (this is a decision of
  * the client using this class) of type K.
  *
