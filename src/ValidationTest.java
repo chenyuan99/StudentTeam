@@ -41,6 +41,7 @@ class ValidationTest {
         String[] args = null;
         System.setIn(new FileInputStream(fileName));
         ByteArrayOutputStream capturedOut = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
         System.setOut(new PrintStream(capturedOut));
         MainDriver.main(args);
         try {
@@ -49,6 +50,7 @@ class ValidationTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.setOut(originalOut);
 	}
 
 	/**
@@ -62,7 +64,8 @@ class ValidationTest {
         String[] args = null;
         System.setIn(new FileInputStream(fileName));
         ByteArrayOutputStream capturedOut = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(capturedOut));
+		PrintStream originalOut = System.out;
+		System.setOut(new PrintStream(capturedOut));
         MainDriver.main(args);
         try {
             assertEquals(String.join("", (Files.readAllLines(Paths.get("uc2-solution.txt")))).replaceAll(" ", ""),
@@ -70,6 +73,7 @@ class ValidationTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+		System.setOut(originalOut);
 	}
 
 	/**
@@ -80,17 +84,19 @@ class ValidationTest {
 	@Test
 	void testUserCase3() throws FileNotFoundException {
 		fileName = "uc3-modify.txt";
-	     String[] args = null;
-	        System.setIn(new FileInputStream(fileName));
-	        ByteArrayOutputStream capturedOut = new ByteArrayOutputStream();
-	        System.setOut(new PrintStream(capturedOut));
-	        MainDriver.main(args);
-	        try {
-	            assertEquals(String.join("", (Files.readAllLines(Paths.get("uc3-solution.txt")))).replaceAll("\\s", ""),
-	                    capturedOut.toString().replaceAll("\\s", "").replaceAll(System.lineSeparator(), ""));
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
+	 	String[] args = null;
+		System.setIn(new FileInputStream(fileName));
+		ByteArrayOutputStream capturedOut = new ByteArrayOutputStream();
+		PrintStream originalOut = System.out;
+		System.setOut(new PrintStream(capturedOut));
+		MainDriver.main(args);
+		try {
+			assertEquals(String.join("", (Files.readAllLines(Paths.get("uc3-solution.txt")))).replaceAll("\\s", ""),
+					capturedOut.toString().replaceAll("\\s", "").replaceAll(System.lineSeparator(), ""));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.setOut(originalOut);
 	}
 
 	/**
@@ -104,7 +110,8 @@ class ValidationTest {
 		String[] args = null;
         System.setIn(new FileInputStream(fileName));
         ByteArrayOutputStream capturedOut = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(capturedOut));
+		PrintStream originalOut = System.out;
+		System.setOut(new PrintStream(capturedOut));
         MainDriver.main(args);
         try {
             assertEquals(String.join("", (Files.readAllLines(Paths.get("uc4-solution.txt")))).replaceAll(" ", ""),
@@ -112,6 +119,7 @@ class ValidationTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+		System.setOut(originalOut);
 	}
 
 	/**
@@ -125,7 +133,8 @@ class ValidationTest {
         String[] args = null;
         System.setIn(new FileInputStream(fileName));
         ByteArrayOutputStream capturedOut = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(capturedOut));
+		PrintStream originalOut = System.out;
+		System.setOut(new PrintStream(capturedOut));
         MainDriver.main(args);
         try {
             assertEquals(String.join("", (Files.readAllLines(Paths.get("uc5-solution.txt")))).replaceAll(" ", ""),
@@ -133,6 +142,7 @@ class ValidationTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+		System.setOut(originalOut);
 	}
 	
 }

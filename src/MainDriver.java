@@ -3,7 +3,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import org.junit.runners.JUnit4;
+//import org.junit.runners.JUnit4;
 
 /**
  * Runs the Student Team Manager program from the command line.
@@ -145,14 +145,19 @@ public class MainDriver {
                     System.out.println("StudentUserTest: 'testIR' Passed!");
 
                     // ValidationTest
-//                    new ValidationTest().testUserCase1();
-//                    System.out.println("Validation Test 1 Passed.");
-//                    new ValidationTest().testUserCase2();
-//                    System.out.println("Validation Test 2 Passed.");
-//                    new ValidationTest().testUserCase4();
-//                    System.out.println("Validation Test 4 Passed.");
-//                    new ValidationTest().testUserCase5();
-//                    System.out.println("Validation Test 5 Passed.");
+                    new ValidationTest().testUserCase1();
+                    System.setOut(System.out);
+                    System.out.println("Validation Test 1 Passed.");
+					System.setOut(System.out);
+                    new ValidationTest().testUserCase2();
+                    System.out.println("Validation Test 2 Passed.");
+					System.setOut(System.out);
+                    new ValidationTest().testUserCase4();
+					System.setOut(System.out);
+                    System.out.println("Validation Test 4 Passed.");
+					System.setOut(System.out);
+                    new ValidationTest().testUserCase5();
+                    System.out.println("Validation Test 5 Passed.");
 
 
                 } catch (FileNotFoundException e) {
@@ -168,6 +173,7 @@ public class MainDriver {
                     System.out.println("EXCEPTION");
                     return;
                 }
+				System.setOut(System.out);
                 System.out.println("All Validation Tests passed.");
 				return;
 			}
