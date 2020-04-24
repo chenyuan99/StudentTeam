@@ -44,7 +44,7 @@ class ValidationTest {
 		MainDriver.main(args);
 		try {
 			assertEquals(String.join("", (Files.readAllLines(Paths.get("MainTestOut.txt")))).replaceAll(" ", ""),
-					capturedOut.toString().replaceAll(" ", "").replaceAll(System.lineSeparator(), ""));
+					capturedOut.toString().replaceAll("\\s", "").replaceAll(System.lineSeparator(), ""));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
