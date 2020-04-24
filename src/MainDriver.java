@@ -56,6 +56,9 @@ public class MainDriver {
                 case NavigationMenu.SIGN_OUT:
                     signOut(scan);
                     break;
+                case NavigationMenu.REMOVE_PROFILE:
+                    removeProfile(scan);
+                    break;
                 default:
                     break;
             }
@@ -149,11 +152,7 @@ public class MainDriver {
             System.out.println("Incorrect password.");
             return;
         }
-        //
-        // TODO: add password validation stuff here Mr. Saunders!
-
-        // TODO: also see if you can mask the input somehow (less important)
-        //
+     
         currentUser = user;
 
     }
@@ -257,6 +256,17 @@ public class MainDriver {
 
     private static void signOut(Scanner scan) {
         currentUser = null;
+    }
+    
+    private static void removeProfile(Scanner scan) {
+        System.out.println("Enter your email to remove your profile:");
+        if(currentUser.checkPassword(scan.nextLine())) {
+            database.remove(currentUser.getEmail());
+            currentUser = null;
+            System.out.println("Profile Removed");
+        }else {
+            System.out.println("Error: unsuccessful removal");
+        }
     }
 
 } // end of MainDriver class

@@ -16,6 +16,7 @@ public class NavigationMenu {
 	public static final int VIEW_PROFILE = 3;
 	public static final int EDIT_PROFILE = 4;
 	public static final int SIGN_OUT = 5;
+	public static final int REMOVE_PROFILE = 11;
 	
 	/* Return options for displayEditProfile()*/
 	public static final int EDIT_EMAIL = 1;
@@ -25,7 +26,7 @@ public class NavigationMenu {
 	public static final int EDIT_PHONE_NUMBER = 5;
 	public static final int EDIT_MAJOR = 6;
 	public static final int EDIT_YEAR = 7;
-	
+
 	public static int displayMainMenu(Scanner scan, User user) 
 	{
 		int choice = -1;
@@ -35,11 +36,13 @@ public class NavigationMenu {
 			System.out.println("1. View Profile");
 			System.out.println("2. Edit Profile");
 			System.out.println("3. Sign Out");
+			System.out.println("4. Remove Profile");
 			
 			switch (choice = scan.nextInt()) {
 				case 1: return VIEW_PROFILE;
 				case 2: return EDIT_PROFILE;
 				case 3: return SIGN_OUT;
+				case 4: return REMOVE_PROFILE;
 				default:
 					// unrecognized input, throw error
 					break;
