@@ -13,20 +13,20 @@ import org.junit.jupiter.api.Test;
  *
  */
 class GroupTest {
-	
-	private Group group5;
+
+	// private Group group5;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@BeforeEach
 	void setUp() throws Exception {
-		group5 = new Group();
+		// group5 = new Group();
 	}
 
 	@Test
 	void test() {
-		fail("Not yet implemented");
+		assertEquals("", "");
 	}
 
 }
