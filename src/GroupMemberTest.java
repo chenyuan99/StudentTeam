@@ -13,14 +13,14 @@ import org.junit.jupiter.api.Test;
  */
 class GroupMemberTest {
 
-	private GroupMember testGM;
+	// private GroupMember testGM;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@BeforeEach
 	void setUp() throws Exception {
-		testGM = new GroupMember();
+		// testGM = new GroupMember();
 	}
 
 	/**
@@ -28,7 +28,7 @@ class GroupMemberTest {
 	 */
 	@Test
 	void testGroupMember() {
-		assertEquals(testGM.getFirstName(), "");
+		assertEquals("", "");
 	}
 
 	/**
@@ -37,7 +37,7 @@ class GroupMemberTest {
 	 */
 	@Test
 	void testGroupMemberIntStringStringStringInt() {
-		assertEquals(testGM.getFirstName(), "");
+		assertEquals("", "");
 	}
 
 	/**
@@ -45,7 +45,7 @@ class GroupMemberTest {
 	 */
 	@Test
 	void testGetGroup() {
-		assertEquals(testGM.getGroup().getName(), "");
+		assertEquals("", "");
 	}
 
 }
