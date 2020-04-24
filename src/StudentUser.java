@@ -41,9 +41,10 @@ public class StudentUser extends User {
      * @param lName
      * @param mail
      * @param pNumber
+     * @param password
      */
-    public StudentUser(long uID, String fName, String lName, String mail, String pNumber, String maj, String yr) {
-        super(uID, fName, lName, mail, pNumber);
+    public StudentUser(long uID, String fName, String lName, String mail, String pNumber, String maj, String yr, String password) {
+        super(uID, fName, lName, mail, pNumber, password);
         major = maj;
         year = yr;
         currentGroup = new ArrayList<Group>();

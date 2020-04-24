@@ -15,7 +15,7 @@ class UserTest {
     
     @BeforeEach
     void setUp() throws Exception {
-        opUser = new User(0,"man","man","man@emai.com","5401234561");
+        opUser = new User(0,"man","man","man@emai.com","5401234561", "guypls");
         testUser = new User();
     }
 

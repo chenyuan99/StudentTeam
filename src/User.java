@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 /**
  * Most of methods from most of the class will not be implemented!
- * We design the project for web-dev. Design was to use full stack + server side + database 
+ * We design the project for web-dev. Design was to use full stack + server side
+ * + database
  * But since we only implementing a simulator for 5 use-cases
  * Full stack - become console
  * server side - become main method
@@ -16,7 +17,7 @@ import java.util.Scanner;
  * @author Yuan Chen
  * @version 04-07-2020
  * @editor Man
- * ...
+ *         ...
  */
 public class User implements Serializable {
 
@@ -25,10 +26,10 @@ public class User implements Serializable {
     private String lastName;
     private String email;
     private String phoneNumber;
+    private String password;
     private ArrayList<String> contactList;
-    private ArrayList<Review> reviews; 
-    
-    
+    private ArrayList<Review> reviews;
+
     /**
      * empty constructor
      */
@@ -44,23 +45,38 @@ public class User implements Serializable {
 
 
     /**
-     * constructor 
+     * constructor
      * 
-     * @param uID user ID
-     * @param fName first name
-     * @param lName last name
-     * @param mail email 
-     * @param pNumber phonenumer
+     * @param uID
+     *            user ID
+     * @param fName
+     *            first name
+     * @param lName
+     *            last name
+     * @param mail
+     *            email
+     * @param pNumber
+     *            phonenumber
+     * @param password
+     *            password
      */
-    public User(long uID, String fName, String lName, String mail, String pNumber) {
+    public User(
+        long uID,
+        String fName,
+        String lName,
+        String mail,
+        String pNumber,
+        String pw) {
         userID = uID;
         firstName = fName;
         lastName = lName;
         email = mail;
         phoneNumber = pNumber;
+        password = pw;
         contactList = new ArrayList<>();
         reviews = new ArrayList<>();
     }
+
 
     /**
      * 
@@ -69,6 +85,7 @@ public class User implements Serializable {
     public String getFirstName() {
         return firstName;
     }
+
 
     /**
      * 
@@ -87,6 +104,7 @@ public class User implements Serializable {
         return email;
     }
 
+
     /**
      * 
      * @return user's phone number
@@ -104,6 +122,7 @@ public class User implements Serializable {
         return contactList;
     }
 
+
     /**
      * 
      * @return an list of Reviews
@@ -116,7 +135,8 @@ public class User implements Serializable {
     /**
      * Will set the first name field to be the following input.
      * 
-     * @param newFirst new first name
+     * @param newFirst
+     *            new first name
      */
     public void setFirstName(String newFirst) {
         firstName = newFirst;
@@ -124,11 +144,12 @@ public class User implements Serializable {
     }
 
 
-   /**
-    * Will set the last name field to be the following input.
-    * 
-    * @param newLast new last name
-    */
+    /**
+     * Will set the last name field to be the following input.
+     * 
+     * @param newLast
+     *            new last name
+     */
     public void setLastName(String newLast) {
         lastName = newLast;
     }
@@ -137,63 +158,100 @@ public class User implements Serializable {
     /**
      * Will set the Email field to be the following input.
      * 
-     * @param newEmail new email
+     * @param newEmail
+     *            new email
      */
     public void setEmail(String newEmail) {
         email = newEmail;
     }
 
+
     /**
      * Will set the phoneNumber field to be the following input.
      * 
-     * @param number new phone number
+     * @param number
+     *            new phone number
      */
     public void setPhoneNumber(String number) {
         phoneNumber = number;
+    }
+
+    public void setPassword(String pw) {
+        password = pw;
     }
 
     /**
      * toString will return a string representation of this object
      */
     public String toString() {
-        return userID + " " + firstName +" " + lastName + " Email: " + email + " " + phoneNumber;
+        return userID + " " + firstName + " " + lastName + " Email: " + email
+            + " " + phoneNumber;
     }
-    
-    
-    
-    // methods that are irrelevant, We design have use these methods to interact with live server 
+
+    /**
+     * Check the password on signin
+     * 
+     * @param user The user whose password is getting checked
+     * @param pw Password to be checked
+     * @return
+     */
+    public boolean checkPassword(String pw) {
+        return pw.equals(password);
+    }
+
+    // methods that are irrelevant, We design have use these methods to interact
+    // with live server
     // which we don't need to implement for the simulator
     public void addUserToContactList() {
         System.out.println("user added to the contract list");
     }
+
+
     public void updateReviewsOfOthers() {
         System.out.println("Review updated");
     }
+
+
     public void requestActivation() {
         System.out.println("sending activation requestion...");
     }
+
+
     public void authenticate() {
         System.out.println("autehntication completed");
     }
+
+
     public void removeProfile() {
         System.out.println("removed user account");
     }
+
+
     // Functions for guest users
     public void selectCreateNewProfile() {
         System.out.print("profile creation form\n");
     }
+
+
     public void submitCreateNewProfile() {
         System.out.print("an email was sent\n");
     }
+
+
     // Functions for student user
     public void authenticateStudentProfile() {
         System.out.print("an email was sent\n");
     }
+
+
     public void requestAnotherActivationEmail() {
         System.out.print("an email was sent\n");
     }
+
+
     public void clickActivationLink() {
         System.out.print("site-wide student features are enabled");
     }
-    
+
+
 }

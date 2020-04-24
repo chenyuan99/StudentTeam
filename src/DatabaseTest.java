@@ -15,7 +15,7 @@ public class DatabaseTest {
     @Test
     void testAddingDatabase() {
 
-        User testUser = new User(1, "John","Doe", "jdoe@vt.edu", "0001110000");
+        User testUser = new User(1, "John","Doe", "jdoe@vt.edu", "0001110000", "janewhereareyou");
         assertEquals(db.store(testUser.getEmail(),testUser), testUser);
 
     }

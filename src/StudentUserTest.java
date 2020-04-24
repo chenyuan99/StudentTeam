@@ -22,7 +22,7 @@ class StudentUserTest {
     @BeforeEach
     void setUp() throws Exception {
         apple = new StudentUser();
-        opStudentUser = new StudentUser(1,"man","man", "man@email.c","5401234564", "cs", "senior");
+        opStudentUser = new StudentUser(1,"man","man", "man@email.c","5401234564", "cs", "senior", "nothavingittoday");
     }
 
 
