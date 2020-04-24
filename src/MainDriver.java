@@ -19,9 +19,11 @@ public class MainDriver {
     private static User currentUser;
 
     public static void main(String[] args) {
-        if (args.length > 0 && args[0].equals("-d")) {
-            // TODO Run test cases through here
-            return;
+        if(args != null) {
+            if (args.length > 0 && args[0].equals("-d")) {
+                // TODO Run test cases through here
+                return;
+            }   
         }
 
         database = new Database<String, StudentUser>("data.db");
@@ -254,7 +256,7 @@ public class MainDriver {
     }
     
     private static void removeProfile(Scanner scan) {
-        System.out.println("Enter your email to remove your profile:");
+        System.out.println("Enter your password to remove your profile:");
         if(currentUser.checkPassword(scan.nextLine())) {
             database.remove(currentUser.getEmail());
             currentUser = null;
