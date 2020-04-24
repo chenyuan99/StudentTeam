@@ -130,4 +130,16 @@ public class Database <K, V> {
         return (V) value;
     }
 
+    /**
+     * Removes an entry from the database.
+     *
+     * @param key Key to remove from database
+     * @return the removed value
+     */
+    public V remove(K key) {
+        V removedItem = database.remove(key);
+        this.saveDatabase();
+        return removedItem;
+    }
+
 }
