@@ -1,8 +1,6 @@
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Scanner;
-import org.junit.internal.TextListener;
-import org.junit.runner.JUnitCore;
 
 /**
  * Runs the Student Team Manager program from the command line.
@@ -22,10 +20,7 @@ public class MainDriver {
 
     public static void main(String[] args) {
         if (args.length > 0 && args[0].equals("-d")) {
-            JUnitCore junit = new JUnitCore();
-            junit.addListener(new TextListener(System.out));
-            junit.run(ValidationTest.class);
-            System.out.println("Successfully ran all tests.");
+            // TODO Run test cases through here
             return;
         }
 
