@@ -149,8 +149,11 @@ public class MainDriver {
                     System.setOut(System.out);
                     System.out.println("Validation Test 1 Passed.");
 					System.setOut(System.out);
-                    new ValidationTest().testUserCase2();
-                    System.out.println("Validation Test 2 Passed.");
+					new ValidationTest().testUserCase2();
+					System.out.println("Validation Test 2 Passed.");
+					System.setOut(System.out);
+					new ValidationTest().testUserCase3();
+					System.out.println("Validation Test 3 Passed.");
 					System.setOut(System.out);
                     new ValidationTest().testUserCase4();
 					System.setOut(System.out);
