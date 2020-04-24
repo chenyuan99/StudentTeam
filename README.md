@@ -5,12 +5,13 @@ Design Team: 	Group 5
 
 Team Members: 	Rae Bouldin, Yuan Chen, Saunders Cox, Stephen Franklin, 
 Chaipakon Luangprasert
-## User Cases
-Yuan: 13, 14, 15, 16, 17
+
+How to run: 
+`java -jar Studentteam.jar`
 
 ## Implementation and Tesing
 
-### Use Cases
+### Use Cases Implemented
 
 1. Add customer profile
 2. Log into customer profile
@@ -20,6 +21,8 @@ Yuan: 13, 14, 15, 16, 17
 
 
 ### Single Command for Testing
-#### Unit Test
-### Individual Test
+There is a jar file packaged at the same level as this README.md.
+If run from this directory you can supply a flag to it to run all of our Unit tests
+and our Validation Tests.
 
+`java -jar Studentteam.jar -d`
