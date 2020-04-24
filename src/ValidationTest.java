@@ -77,21 +77,21 @@ class ValidationTest {
 	 * 
 	 * @throws FileNotFoundException
 	 */
-	/*@Test
+	@Test
 	void testUserCase3() throws FileNotFoundException {
 		fileName = "uc3-modify.txt";
 	     String[] args = null;
 	        System.setIn(new FileInputStream(fileName));
 	        ByteArrayOutputStream capturedOut = new ByteArrayOutputStream();
-	        //System.setOut(new PrintStream(capturedOut));
+	        System.setOut(new PrintStream(capturedOut));
 	        MainDriver.main(args);
-	        /*try {
-	            assertEquals(String.join("", (Files.readAllLines(Paths.get("uc3-solution.txt")))).replaceAll(" ", ""),
+	        try {
+	            assertEquals(String.join("", (Files.readAllLines(Paths.get("uc3-solution.txt")))).replaceAll("\\s", ""),
 	                    capturedOut.toString().replaceAll("\\s", "").replaceAll(System.lineSeparator(), ""));
 	        } catch (IOException e) {
 	            e.printStackTrace();
-	        }*/
-	//}
+	        }
+	}
 
 	/**
 	 * Test method for {@link MainDriver#main(java.lang.String[])}.
