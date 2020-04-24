@@ -22,9 +22,9 @@ public class MainDriver {
 
 	public static void main(String[] args) {
 		if (args != null) {
+		    // java MainDriver -d
 			if (args.length > 0 && args[0].equals("-d")) {
-				org.junit.runner.JUnitCore.runClasses(ValidationTest.class, DocumentTest.class, GroupTest.class,
-						GroupManagerTest.class, GroupMemberTest.class, MainTesting.class, ReviewTest.class,
+				org.junit.runner.JUnitCore.runClasses(ValidationTest.class, DocumentTest.class, MainTesting.class, ReviewTest.class,
 						SkillTest.class, StudentUserTest.class, UserTest.class);
 				return;
 			}
