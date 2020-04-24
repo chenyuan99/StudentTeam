@@ -1,0 +1,126 @@
+==================== STUDENT TEAM MANAGER ====================
+Welcome, Guest!
+Please input one of the numbers in the menu displayed below to navigate.
+1. Sign In
+2. Create New Profile
+3. Quit
+===== CREATE NEW PROFILE =====
+Enter your email: Enter your password: Enter your first name: Enter your last name: Enter your phone number: Enter your major: Select your year:
+1. Freshman
+2. Sophomore
+3. Junior
+4. Senior
+Your profile has been successfully created!
+Welcome, Guest!
+Please input one of the numbers in the menu displayed below to navigate.
+1. Sign In
+2. Create New Profile
+3. Quit
+Enter your email: Enter your password: Hello, manF!
+1. View Profile
+2. Edit Profile
+3. Sign Out
+===== VIEW PROFILE =====
+Name:	manF manL
+Email:	man@idk.com
+Phone:	540-315-4521
+Major:	cs
+Year:	Sophomore
+
+Hello, manF!
+1. View Profile
+2. Edit Profile
+3. Sign Out
+===== EDIT PROFILE =====
+1. Edit Email
+2. Edit Password
+3. Edit First Name
+4. Edit Last Name
+5. Edit Phone Number
+6. Edit Major
+7. Edit Year
+8. Cancel
+Enter a new first name: Your profile has been successfully updated!
+Hello, amazing!
+1. View Profile
+2. Edit Profile
+3. Sign Out
+===== VIEW PROFILE =====
+Name:	amazing manL
+Email:	man@idk.com
+Phone:	540-315-4521
+Major:	cs
+Year:	Sophomore
+
+Hello, amazing!
+1. View Profile
+2. Edit Profile
+3. Sign Out
+Welcome, Guest!
+Please input one of the numbers in the menu displayed below to navigate.
+1. Sign In
+2. Create New Profile
+3. Quit
+===== CREATE NEW PROFILE =====
+Enter your email: Enter your password: Enter your first name: Enter your last name: Enter your phone number: Enter your major: Select your year:
+1. Freshman
+2. Sophomore
+3. Junior
+4. Senior
+Your profile has been successfully created!
+Welcome, Guest!
+Please input one of the numbers in the menu displayed below to navigate.
+1. Sign In
+2. Create New Profile
+3. Quit
+===== CREATE NEW PROFILE =====
+Enter your email: Enter your password: Enter your first name: Enter your last name: Enter your phone number: Enter your major: Select your year:
+1. Freshman
+2. Sophomore
+3. Junior
+4. Senior
+Your profile has been successfully created!
+Welcome, Guest!
+Please input one of the numbers in the menu displayed below to navigate.
+1. Sign In
+2. Create New Profile
+3. Quit
+===== CREATE NEW PROFILE =====
+Enter your email: Enter your password: Enter your first name: Enter your last name: Enter your phone number: Enter your major: Select your year:
+1. Freshman
+2. Sophomore
+3. Junior
+4. Senior
+Your profile has been successfully created!
+Welcome, Guest!
+Please input one of the numbers in the menu displayed below to navigate.
+1. Sign In
+2. Create New Profile
+3. Quit
+===== CREATE NEW PROFILE =====
+Enter your email: Enter your password: Enter your first name: Enter your last name: Enter your phone number: Enter your major: Select your year:
+1. Freshman
+2. Sophomore
+3. Junior
+4. Senior
+'6' is an invalid selection.
+Select your year:
+1. Freshman
+2. Sophomore
+3. Junior
+4. Senior
+Your profile has been successfully created!
+Welcome, Guest!
+Please input one of the numbers in the menu displayed below to navigate.
+1. Sign In
+2. Create New Profile
+3. Quit
+Enter your email: A user with that email doesn't exist.
+Welcome, Guest!
+Please input one of the numbers in the menu displayed below to navigate.
+1. Sign In
+2. Create New Profile
+3. Quit
+
+Goodbye!
+==============================================================

@@ -1,7 +1,9 @@
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -37,7 +39,15 @@ class ValidationTest {
 		fileName = "MainTest.txt";
 		String[] args = null;
 		System.setIn(new FileInputStream(fileName));
+		ByteArrayOutputStream capturedOut = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(capturedOut));
 		MainDriver.main(args);
+		try {
+			assertEquals(String.join("", (Files.readAllLines(Paths.get("MainTestOut.txt")))).replaceAll(" ", ""), capturedOut.toString().replaceAll(" ", "").replaceAll("\n", ""));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	/**
