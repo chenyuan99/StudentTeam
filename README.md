@@ -5,6 +5,22 @@ Design Team: 	Group 5
 
 Team Members: 	Rae Bouldin, Yuan Chen, Saunders Cox, Stephen Franklin, 
 Chaipakon Luangprasert
+
+## Project Description
+- Manage students: add/remove/modify customer profiles with their updated list of skills (similar to LinkedIn) and collaboration styles and preference.
+- Validate skills by allowing the submission of homework or class scores.
+- Allow 3rd party reviews of student’s work
+- Automatically search for collaborators or build collaboration teams based on student profiles.
+
+## Non-Functional Requirements
+1. User security
+2. Portability
+3. Internationalization
+4. Quick Accessibility
+5. Version Control
+
+
+
 ## User Cases
 
 ## Implementation and Tesing
